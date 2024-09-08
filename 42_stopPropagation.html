@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Propagation</title>
+</head>
+<style>
+    .btn {
+        height: 50px;
+        width: 150px;
+        color: black;
+        background-color: aqua;
+        border-radius: 25px;
+        margin: 10px;
+    }
+    #container {
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin: 50px;
+    }
+</style>
+<body>
+    <div id="container">
+        <button id="btn1" class="btn">Click Me 01</button>
+        <button id="btn2" class="btn">Click Me 02</button>
+        <button id="btn3" class="btn">Click Me 03</button>
+    </div>
+
+</body>
+<script>
+    // we can addEventListener method in two way (as per usecase)
+    
+    // 1st
+
+    document.getElementById('container').addEventListener('click', function(){
+        alert('Container Event')
+    }, false)
+
+
+    document.getElementById('btn1').addEventListener('click', function(e){
+        alert('Button Event')
+        e.stopPropagation() // use only this event and stop another any event
+    }, false)   
+
+
+</script>
+</html>

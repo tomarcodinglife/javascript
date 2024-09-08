@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Sujit Tomar</h1>
+    <button id="button">Click Me</button>
+
+<script>
+    //setTimeout
+    setTimeout (function(){
+        console.log ('Sujit Tomar')
+    }, 5000)
+
+
+    //or
+
+    const myFunction = function(){
+        console.log ('Sujit Kumar Singh')
+    }
+
+    setTimeout (myFunction, 2000)
+
+    // change inner html after some time like 2s 5s etc.. as per your required 
+
+    const head = document.querySelector('#heading')
+    const headFun = function () {
+        head.innerHTML = '<h1>we are Reading JavaScript from Internet Best YouTube Chanel Chai aur Code</h1>'
+    }
+
+    setTimeout(headFun, 5000)
+</script>
+</body>
+</html>

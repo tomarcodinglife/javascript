@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subcontainer {
+    height: 250px;
+    width: 700px;
+    background-color: rgb(0, 0, 49);
+    color: aqua;
+    text-align: center;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+#button {
+    height: 25px;
+    width: 150px;
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 15px;
+    border: none;
+    border-radius: 25px;
+}
+
+#readmore {
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container" id="boxdiv">
+        <span class="subcontainer" id="subbox">
+            <h1 id="title" class="titleName">Sujit Kumar Singh</h1>
+            <h3>i am learning innerText and innerContent</h3>
+            <p id="paraId" class="paraClass">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reiciendis aut mollitia, eaque sit sapiente inventore debitis. Assumenda, cumque ipsa? Minus corporis dolor ducimus qui voluptate sapiente vel, nisi eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure dolorum consectetur fuga consequatur illo accusantium nisi recusandae quia sequi ad ratione atque qui praesentium, adipisci rerum numquam voluptatum! Dolorum? <a href="http://google.com/search?q=sujit+tomar" target="_blank" id="readmore"> Read More</a> <button style="display: none;"> Click Me</button></p> 
+            
+            <button id="button">Click Me</button>
+        </span>
+    </div>
+<script>
+    console.log('hi i am javaScript')
+
+let paragraph = document.getElementById('paraId')
+console.log(paragraph)
+
+let itdemo = paragraph.innerText
+console.log(itdemo)
+
+/* return
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reiciendis aut mollitia, eaque sit sapiente inventore debitis. Assumenda, cumque ipsa? Minus corporis dolor ducimus qui voluptate sapiente vel, nisi eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure dolorum consectetur fuga consequatur illo accusantium nisi recusandae quia sequi ad ratione atque qui praesentium, adipisci rerum numquam voluptatum! Dolorum? Read More
+*/
+
+let icdemo = document.getElementById('paraId').textContent
+console.log(icdemo)
+
+/* return
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reiciendis aut mollitia, eaque sit sapiente inventore debitis. Assumenda, cumque ipsa? Minus corporis dolor ducimus qui voluptate sapiente vel, nisi eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure dolorum consectetur fuga consequatur illo accusantium nisi recusandae quia sequi ad ratione atque qui praesentium, adipisci rerum numquam voluptatum! Dolorum?  Read More  Click Me
+
+*/
+
+let ihtml = document.getElementById('paraId').innerHTML
+console.log(ihtml)
+/* return
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reiciendis aut mollitia, eaque sit sapiente inventore debitis. Assumenda, cumque ipsa? Minus corporis dolor ducimus qui voluptate sapiente vel, nisi eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos iure dolorum consectetur fuga consequatur illo accusantium nisi recusandae quia sequi ad ratione atque qui praesentium, adipisci rerum numquam voluptatum! Dolorum? <a href="http://google.com/search?q=sujit+tomar" target="_blank" id="readmore"> Read More</a> <button style="display: none;"> Click Me</button>
+
+*/
+</script>
+</body>
+</html>
