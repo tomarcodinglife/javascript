@@ -38,8 +38,9 @@
     
     // 1st Way
 
+    let buttons = document.getElementById('container')
 
-    document.getElementById('container').addEventListener('click', function(){
+    buttons.addEventListener('click', function(){
         alert('Container Event')
     }, true) // outer to inner event means it is first event
 
