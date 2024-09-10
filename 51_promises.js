@@ -93,7 +93,32 @@ promiseFive.then((user) => {
     console.log(user);
     return user.username
 }).then((myusername)=>{
-    console.log(` hi i am .then ${myusername}`)
+    console.log(`hi i am .then ${myusername}`)
 }).catch(function(error){
-    console.log(` hi i am .catch ${error}`)
+    console.log(`hi i am .catch ${error}`)
+}).finally(()=>{
+    console.log("Promise Resolved")
 })
+
+
+/********************************************************************* */
+
+const promiseSix = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if(!error) {
+            resolve({username:"Sohan", email : "test@google.com"})
+        }else{
+            reject("Something Wrong")
+        }
+    }, 12000)
+})
+
+promiseSix.then((user)=>{
+    return user.username
+}).catch((error)=>{
+    console.log(error)
+})
+
+console.log('***********************************************************************************')
+/*************************************************************** */
