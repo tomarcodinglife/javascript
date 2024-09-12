@@ -9,7 +9,7 @@ console.log(multiplefunction(2,3)) //6
 
 // now we can check that function work on object method. 
 
-console.log("****************************************************************************")
+console.log("****************************************************************************");
 
 let multiplefunctionOne = function multiplicationOne (num1) {
     // console.log(num1*num2)
