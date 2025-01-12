@@ -40,6 +40,8 @@ let dtv05
 //Non Primitive Data Type
 
 const movies = ["Shaktiman", "Nagraj", "Balveer", "Nagin"] //Array
+
+//object
 let myobj = {
     name : "Sujit Kumar Singh",
     roll : 125205,
@@ -51,7 +53,7 @@ let myobj = {
 
 console.log(myobj)
 
-
+//Function
 const myFunction = function (){
     console.log("Hello Worls")
 }
