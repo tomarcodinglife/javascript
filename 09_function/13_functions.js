@@ -80,6 +80,7 @@ console.log(calculateCartPrice(100, 500, 600, 800, 50, 600)) // [ 100, 500, 600,
 
 function CartPricecalculate(num1, num2, ...value) {
     return value
+    //
 }   
 
 console.log(CartPricecalculate(100, 500, 600, 800, 50, 600)) // [ 600, 800, 50, 600 ] because num1 = 100, num2=500 but return only value
