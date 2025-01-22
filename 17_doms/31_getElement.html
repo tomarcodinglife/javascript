@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Learning</title>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#container01 {
+    height: 250px;
+    width: 700px;
+    background-color: aqua;
+    padding: 15px;
+    border-radius: 25px;
+}
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div id="container01" class="subcontainer">
+            <h1 id="Heading-Name" class="head"> My Self Sujit Kumar Singh</h1>
+            <p id="paragraph" class="para">I am Learning Dom Menipulation</p>
+            <p id="paragraph01" class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis excepturi recusandae, officiis itaque, rem totam sequi ipsum fuga a ut necessitatibus obcaecati officia? Rem explicabo veniam possimus ullam tempora illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam beatae, odit perferendis veniam quidem hic rerum, ipsa, dolore commodi nulla fuga architecto. Accusamus illo quisquam veritatis laboriosam neque fuga odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae temporibus magni assumenda omnis repellendus vero, veritatis quia nulla, dolore laborum! Nobis laboriosam in eaque distinctio sint doloremque error fugiat!</p>
+        </div>
+    </div>
+
+<script>
+console.log("hi i am Javascript")
+
+
+// get Element by Id
+
+let title = "Sujit Kumar Singh"
+
+let headingName = document.getElementById("Heading-Name")
+headingName.innerText = title
+console.log(headingName) 
+
+let className = document.getElementById("Heading-Name").getAttribute('class')
+// let className=document.getElementById('Heading-Name').getAttribute('class') 
+console.log(className)
+
+let newClass = document.getElementById('Heading-Name').setAttribute('class', 'Heading-Name test-classadd')
+
+headingName.style.backgroundColor = 'green'
+headingName.style.borderRadius = '15px'
+headingName.style.color = 'white'
+headingName.style.color = 'blue'
+</script>
+
+</body>
+</html>

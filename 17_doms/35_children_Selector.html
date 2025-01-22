@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom (Children Selector)</title>
+    <style>
+    body {
+        padding: 10px;
+    }
+    .content {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .contentBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 450px;
+        border-radius: 15px;
+        border: 5px rgb(0, 0, 0) dashed;
+        background-color: rgb(0, 255, 255);
+        text-align: center;
+        overflow:scroll;
+        scrollbar-color: red orange;
+        scrollbar-width: none;
+        padding: 10px;
+        padding-top: 560px;
+    }
+    </style>
+</head>
+<body>
+        <div class="content">
+            <div class="contentBox">
+                    <h1 id="weekHead" class="weekHead">Week Name</h1>
+                    <span class="weekBox">
+                        <h2>Monday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Tuesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Wednesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Thursday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Friday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Saturday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Sunday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+            </div>
+    </div>
+</body>
+<script>
+    let demoName = "Hi i am java Script"
+    console.log(demoName)
+    const parent = document.querySelector('.contentBox')
+    console.log(parent)
+    console.log(parent.children)
+    /*return
+
+}
+    */
+    console.log(parent.children[1])
+    /*return
+    <span class="weekBox">
+                        <h2>Monday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+    */
+    console.log(parent.children[2].innerHTML)
+    /*return
+
+                        <h2>Tuesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+    */
+   console.log(parent.firstElementChild)
+   /* return
+   <h1 id="weekHead" class="weekHead">Week Name</h1>
+   */
+   console.log(parent.lastElementChild)
+   /* return
+   <span class="weekBox">
+                        <h2>Sunday</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.
+                        </p>
+                    </span>
+   */
+    let childEl = document.querySelector('.weekBox')
+    console.log(childEl)
+    /* return
+    <span class="weekBox">
+                        <h2>Monday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+    */
+    console.log(childEl.parentElement)
+    /* return
+    <div class="contentBox">
+                    <h1 id="weekHead" class="weekHead">Week Name</h1>
+                    <span class="weekBox">
+                        <h2>Monday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Tuesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Wednesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Thursday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Friday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Saturday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+                    <span class="weekBox">
+                        <h2>Sunday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+            </div>
+    */
+    console.log(childEl.nextSibling)
+    console.log(childEl.nextElementSibling)
+    /* return
+    <span class="weekBox">
+                        <h2>Tuesday</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, repudiandae veritatis voluptatum in hic corrupti similique esse quos exercitationem eligendi. Fugiat ea sit facilis, fugit odit repudiandae! Cupiditate, ipsa debitis.</p>
+                    </span>
+    */
+    console.log(childEl.childElementCount) // 2
+    console.log(parent.childNodes) 
+    /*return
+}
+    */
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol class="language">
+        <li>JavaScript</li>
+    </ol>
+</body>
+<script>
+
+function addLangItem (lang) {
+    let eleNew = document.createElement("li")
+    let eleNewinnerText = eleNew.innerText = lang
+    document.querySelector(".language").appendChild(eleNew)
+ }
+
+addLangItem("Python")
+addLangItem("TypeScript")
+
+// ***************************************************************/
+
+//edit
+const mylang =  document.querySelector("li:nth-child(2)")
+const newEl = document.createElement("li")
+newEl.textContent = "Java"
+mylang.replaceWith(newEl);
+
+/*******************************************************************/
+
+//edit
+const myFirstLang = document.querySelector("li:first-child")
+myFirstLang.outerHTML = "<li> C++ </li>"
+
+
+/***************************************/
+
+//remove 
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove() // remove last li 
+
+</script>
+
+</html>

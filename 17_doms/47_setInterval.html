@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">I am Sujti Kumar Singh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+<script>
+/*
+    setInterval(function(){
+        console.log("Sujit", Date.now())
+    }, 1000)
+
+*/
+
+    // or
+
+    let newFun = function() {
+        console.log("Sujit", Date.now())
+    }
+
+    //or 
+
+    let newFunction = function(str) {
+        console.log(str, Date.now())
+    }
+
+    setInterval(newFun, 1000)
+    setInterval(newFunction, 1000, "hi")
+
+</script>
+</body>
+</html>

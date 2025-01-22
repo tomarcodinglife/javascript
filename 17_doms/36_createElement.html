@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(247, 255, 220);
+    }
+</style>
+<body>
+    
+</body>
+<script>
+   let divBox = document.createElement('div')
+   let h1Tag = document.createElement('h1')
+   divBox.childNodes = h1Tag
+   let h1TagInnerText = h1Tag.innerText = "Sujit Kumar Singh"
+   h1Tag.style.color = "red"
+   let divChild = divBox.appendChild(h1Tag)
+   console.log(divBox)
+   console.log(h1Tag)
+   console.log(divChild)
+   console.log(h1TagInnerText)
+   document.body.appendChild(divBox)
+
+   const divCreate = function myDiv (clr, tx) {
+   let divBox = document.createElement('div')
+   let h1Tag = document.createElement('h1')
+   divBox.childNodes = h1Tag
+   let h1TagInnerText = h1Tag.innerText = tx
+   h1Tag.style.color = clr
+   let divChild = divBox.appendChild(h1Tag)
+   console.log(divBox)
+   console.log(h1Tag)
+   console.log(divChild)
+   console.log(h1TagInnerText)
+   document.body.appendChild(divBox)
+   }
+
+   divCreate("red", "javascript")
+   divCreate("blue", "I am Sujit Tomar")
+   divCreate("black", "i am Learning JavaScript function & DOM")
+
+</script>
+</html>

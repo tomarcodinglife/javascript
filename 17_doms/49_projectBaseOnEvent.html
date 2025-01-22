@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">I am Sujit Kumar Singh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+<script>
+
+    let newFunction = function() {
+        console.log('Sujit', Date.now())
+    }
+
+
+    let startButton = document.querySelector('#start')
+    let stopButton = document.querySelector('#stop')
+    let intervalValue;
+
+    // let newSt = setInterval(newFunction, 1000, "hi")
+
+    startButton.addEventListener('click', function(){
+        intervalValue = setInterval(newFunction, 1000)
+    })
+
+
+    stopButton.addEventListener('click', function(){
+        clearInterval(intervalValue)
+        intervalValue = null
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">We are Reading javaScript</h1>
+    <button id="btn">Stop</button>
+
+    <script>
+        const head = document.querySelector('#head')
+        const button = document.querySelector('#btn')
+
+                // let head1 = function () {
+                //     console.log("We are reading React.Js")
+                //     head.innerHTML = 'We are reading React.Js'
+                //     head.style.color = 'red'
+                // }
+                
+                // let head2 = function () {
+                //     console.log("We are reading Node.Js")
+                //     head.innerHTML = 'We are reading Node.Js'
+                //     head.style.color = 'blue'
+                // }
+                // let head3 = function () {
+                //     console.log("We are reading Express.Js")
+                //     head.innerHTML = 'We are reading Express.Js'
+                //     head.style.color = 'green'
+                // }
+
+                // let head4 = function () {
+                //     console.log("We are reading Next.Js")
+                //     head.innerHTML = 'We are reading Next.Js'
+                //     head.style.color = 'blue'
+                // }
+                
+                // let head5 = function () {
+                //     console.log("We are reading TypeScript.Js")
+                //     head.innerHTML = 'We are reading TypeScript.Js'
+                //     head.style.color = 'green'
+                // }
+        
+
+            // setTimeout (head1, 1000)
+            // setTimeout (head2, 2000)
+            // setTimeout (head3, 3000)
+            // setTimeout (head4, 4000)
+            // setTimeout (head5, 5000)
+
+        // const myTextChangeFunction = function() {
+        //     setTimeout (head1, 1000)
+        //     setTimeout (head2, 2000)
+        //     setTimeout (head3, 3000)
+        //     setTimeout (head4, 4000)
+        //     setTimeout (head5, 5000)
+        // }
+
+        // myTextChangeFunction()
+
+        //    let chnagetext =  myTextChangeFunction()
+
+
+/*
+        button.addEventListener('click', function(){
+            clearTimeout(myTextChangeFunction()) // this method use for start again and clear previous
+            button.innerHTML='start'
+        })
+
+*/
+
+
+        let changeText = function () {
+            head.innerHTML = "Best Java Script Video on Internet"
+        }
+
+        let changeMe = setTimeout(changeText, 2000)
+
+        button.addEventListener('click', function(){
+            clearTimeout(changeMe)
+            console.log("Stop Change Text")
+        })
+
+
+
+
+    </script>
+</body>
+</html>
