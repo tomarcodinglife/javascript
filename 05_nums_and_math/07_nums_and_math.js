@@ -44,4 +44,4 @@ let min = 1000
 let max = 9999
 
 console.log(Math.floor(Math.random()*(max-min)) + 1000)
-console.log(Math.ceil((Math.random() * 1000) + 1000))
+console.log(Math.ceil((Math.random() * 1000) + 1000 ))
