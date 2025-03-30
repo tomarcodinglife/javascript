@@ -41,7 +41,7 @@ console.log(newDate)
 console.log(newDate.getMonth())
 console.log(newDate.getDay())
 
-`Today Date is ${newDate} and current time is ${}`
+`Today Date is ${newDate} and current time is ${newDate}`;
 
 console.log("*****************************From Here***************************************")
 
