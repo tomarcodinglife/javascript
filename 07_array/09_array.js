@@ -33,7 +33,7 @@ console.log(stNewNumber.indexOf(9)) // you can check index of arraya data
 
 const myFruits = ["Mango", "Litchi", "Banana", "Grapes"]
 const myNewFruits = myFruits.join()  // useing join method in array you can change in string data
-console.log(myFruits)
+console.log(myFruits) // 
 console.log(myNewFruits)
 
 //************************************************************************************* */
