@@ -27,5 +27,9 @@ console.log(arrayB.join())  //  8,5,9,5,6,2
 
 let arrayc = ["Sujit", "Amit", "Rohit", "Sumit", "Shekhar", "Sohail", "Samir", "Ranjan", "Niraj"]
 console.log(arrayc) // 
+console.log("Slice", arrayc.slice(1, 3)) // Slice [ 'Amit', 'Rohit' ]
+console.log(arrayc) // ['Sujit', 'Amit', 'Rohit', 'Sumit','Shekhar', 'Sohail','Samir', 'Ranjan','Niraj']
+console.group("Splice",arrayc.splice(1, 3)) //  Splice [ 'Amit', 'Rohit', 'Sumit' ]
+console.log(arrayc) //   [ 'Sujit', 'Shekhar', 'Sohail', 'Samir', 'Ranjan', 'Niraj' ]
 
 
