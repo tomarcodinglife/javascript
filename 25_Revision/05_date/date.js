@@ -30,6 +30,37 @@ console.log(day[dateSKS.getDay()]) // Tuesday
 console.log(dateSKS.getMonth() + 1 ) // 4
 console.log(dateSKS.getFullYear()) // 2025
 
-newDate.toLocaleString('default', {
+let myNewDate = new Date() // Create Date Object
+
+
+const dayName = myNewDate.toLocaleString('default', {
     weekday : 'long',
+});
+
+console.log(dayName); // Wednesday
+
+const dateNameA = myNewDate.toLocaleString('default', {
+    day:'2-digit',
+    month:'2-digit',
+    year:'2-digit',
+    timeZone:'Asia/Kolkata',
+    timeZoneName:'short'
 })
+
+console.log(dateNameA) // 04/02/25 
+
+
+// I want to print DDMMYYYY
+
+console.log("------------------I want to print DDMMYYYY----------------------")
+
+const todayDate = new Date()
+const options = {weekday:'long', timeZone:'Asia/Kolkata'};
+const currentDay = todayDate.toLocaleDateString('en-IN', options)
+
+const myDay = String(todayDate.getDate()).padStart(2, "0"); 
+const myMonth = String(todayDate.getMonth()+1).padStart(2, "0"); 
+const myYear = todayDate.getFullYear() ;
+
+const fullDate = `${myDay}/${myMonth}/${myYear} IST` 
+console.log(fullDate) // 02/04/2025 IST
