@@ -68,6 +68,68 @@ console.log(instaUser)
 }
 */
 
+let myUser = {
+    full_Name : {
+        firstName : "Sujit",
+        lastName : "Tomar"
+    }, 
+    shortName : `${this.firstName}${this.lastName}`,
+    marks : {
+        hindi : {
+            fullMarks : 100,
+            passMarks : 30,
+            obtainMarks : 75,
+        },
+        english : {
+            fullMarks : 100,
+            passMarks : 30,
+            obtainMarks : 65,
+        },
+        math : {
+            fullMarks : 100,
+            passMarks : 30,
+            obtainMarks :85,
+        },
+        science : {
+            physics : {
+                fullMarks : 100,
+                passMarks : 30,
+                obtainMarks : 75,
+            },
+            chemistry : {
+                fullMarks : 100,
+                passMarks : 30,
+                obtainMarks : 75,
+            },
+            Biology : {
+                fullMarks : 100,
+                passMarks : 30,
+                obtainMarks : 75,
+            },
+        }
+    }
+}
+
+console.log(myUser) 
+/*
+{
+  full_Name: { firstName: 'Sujit', lastName: 'Tomar' },
+  shortName: 'undefinedundefined',
+  marks: {
+    hindi: { fullMarks: 100, passMarks: 30, obtainMarks: 75 },
+    english: { fullMarks: 100, passMarks: 30, obtainMarks: 65 },
+    math: { fullMarks: 100, passMarks: 30, obtainMarks: 85 },
+    science: { physics: [Object], chemistry: [Object], Biology: [Object] }
+  }
+}
+*/
+
+console.log(myUser.marks.science.physics.obtainMarks) // 75
 
 
+// add two object
+let obj001 = {1: "a", 2 : "b", 3 : "c"}
+let obj002 = {4:"d", 5:"e", 6:"f"}
 
+let obj = Object.assign({}, obj001, obj002)
+console.log(obj) // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
