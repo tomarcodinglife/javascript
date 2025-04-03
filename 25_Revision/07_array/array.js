@@ -33,3 +33,30 @@ console.group("Splice",arrayc.splice(1, 3)) //  Splice [ 'Amit', 'Rohit', 'Sumit
 console.log(arrayc) //   [ 'Sujit', 'Shekhar', 'Sohail', 'Samir', 'Ranjan', 'Niraj' ]
 
 
+let marvelHero = ["thor", "Ironman", "spiderman"]
+let dc_hero= ["superman", "Flash", "batman"]
+marvelHero.push(dc_hero)
+console.log(marvelHero) //   [ 'thor', 'Ironman', 'spiderman', [ 'superman', 'Flash', 'batman' ] ]
+
+let fruitBasket01 = ["Apple", "Banana", "Orange"]
+let fruitBasket02 = ["Mango", "Pineapple", "Greps"]
+let fruitBasket = fruitBasket01.concat(fruitBasket02)
+console.log(fruitBasket) //   [ 'Apple', 'Banana', 'Orange', 'Mango', 'Pineapple', 'Greps' ]
+let spreadFruitsBasket = [...fruitBasket01, ...fruitBasket02]
+console.log(spreadFruitsBasket) //   [ 'Apple', 'Banana', 'Orange', 'Mango', 'Pineapple', 'Greps']
+
+let myanotherArray = [5, 5, , 6, [8, 9, 8, 6, [8, 9, [8, 9, 6]], 5, 6, 5]]
+let myanotherArrayfinal = myanotherArray.flat(Infinity) 
+console.log(myanotherArrayfinal) // [5, 5, 6, 8, 9, 8, 6, 8, 9, 8, 9, 6, 5, 6, 5 ]
+
+let myName = "Sujit"
+console.log(Array.isArray(myName)) // false
+console.log(Array.from(myName)) //    [ 'S', 'u', 'j', 'i', 't' ]
+console.log(Array.from({mname : "Sujit"})) //    []
+
+let score1  = 100
+let score2 = 200
+let score3 = 300
+
+console.log(Array.of(score1, score2, score3)) //   [ 100, 200, 300 ]
+
