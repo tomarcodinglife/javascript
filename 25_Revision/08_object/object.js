@@ -14,8 +14,26 @@ console.log(jsuser.full_Name) //  Sujit Tomar
 console.log(jsuser["email"]) // sujit@google.com
 console.log(jsuser["full_Name"]) // Sujit Tomar
 
+console.log(Object.keys(jsuser)) // [ 'name', 'full_Name', 'age', 'location', 'email', 'isLoggedin' ]
+console.log(Object.values(jsuser)) // [ 'Sujit', 'Sujit Tomar', 22, 'Dellhi', 'sujit@google.com', false]
+console.log(Object.entries(jsuser)) 
+/*
+
+[
+  [ 'name', 'Sujit' ],
+  [ 'full_Name', 'Sujit Tomar' ],
+  [ 'age', 22 ],
+  [ 'location', 'Dellhi' ],
+  [ 'email', 'sujit@google.com' ],
+  [ 'isLoggedin', false ]
+]
+
+*/
+
 jsuser.age = 20
 console.log(jsuser.age) // 20
+
+console.log(jsuser.hasOwnProperty("age")) // true
 
 // symbol use as a key in object
 const mysymbol = Symbol("Key First")    
@@ -133,3 +151,18 @@ let obj002 = {4:"d", 5:"e", 6:"f"}
 
 let obj = Object.assign({}, obj001, obj002)
 console.log(obj) // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
+
+let myobj = {...obj001, ...obj002}
+console.log(myobj) // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
+
+
+// object distructure 
+
+let course = {
+    course_Name : "Javascript",
+    price : 999,
+    course_instructure : "Sujit Tomar"
+}
+
+let {course_instructure : instructure} = course
+console.log(instructure) // Sujit Tomar
