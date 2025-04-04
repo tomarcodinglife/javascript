@@ -74,6 +74,89 @@ let funOne = function (name){
 
 console.log(funOne("Sujit"))// name is Sujit and course is B.Tech
 
+let Userdata = {
+    "sujittomar" : "password@123",
+    "rohit" : "rohit@123",
+    "sujit" : "sujit@123",
+}
+
+let functionLogin = function (username, password){
+    if (username === undefined || password === undefined) {
+        console.log("Please enter username and password")
+        return 
+    }else if (username === "") {
+        console.log("Please enter username")
+        return
+    }else if (password === "") {
+        console.log("Please enter password")
+        return
+    }else if (username in Userdata) {
+        if (Userdata[username] === password) {
+            // "sujit" === "sujit@123" // true
+            console.log("Login Success")
+        } else {
+            console.log("Invalid Password")
+        }
+    } else {
+        console.log("Invalid Username")
+    }
+}
+functionLogin("sujit", "sujit@123") // Login Success
+functionLogin("sujit", "sujit@1234") // Invalid Password
+functionLogin("sujit", "") // Please enter password
+functionLogin("", "sujit@123") // Please enter username
+functionLogin("sujit", undefined) // Please enter username and password
+functionLogin(undefined, "sujit@123") // Please enter username and password
+functionLogin("", "") // Please enter username
+
+
+
+// Function declaration
+// Function declaration is a function that is defined in a declaration statement.
+// It is hoisted to the top of the code, which means it can be called before it is defined.
+// It is also called a function statement.
+// It is a named function that can be called by its name.
+// It is a function that is defined in a declaration statement.
+// It is a function that is defined in a declaration statement and not in an expression statement.
+// It is a function that is defined in a declaration statement and not in an expression statement and not in an arrow function.
+
+function add(num1, num2){
+    return num1 + num2
+}
+
+// Function expression
+// Function expression is a function that is defined inside an expression and not in a declaration statement.
+// It is not hoisted to the top of the code, which means it cannot be called before it is defined.
+// It is also called a function literal.
+// It is an anonymous function that can be called by its name.
+// It is a function that is defined in an expression statement.
+// It is a function that is defined in an expression statement and not in a declaration statement.
+// It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function.
+// It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function and not in a function literal.   
+
+let addNum = function (num1, num2){
+    return num1 + num2
+}
+
+console.log(add(5, 4)) // 9
+console.log(addNum(5, 4)) // 9
+
+
+// Function expression with arrow function
+// Arrow function is a function that is defined in an expression statement and not in a declaration statement.  
+// It is not hoisted to the top of the code, which means it cannot be called before it is defined.
+// It is also called a function literal.
+// It is an anonymous function that can be called by its name.
+// It is a function that is defined in an expression statement.
+// It is a function that is defined in an expression statement and not in a declaration statement.
+// It is a function that is defined in an expression statement and not in a declaration statement and not in a function literal.
+
+let addArrow = (num1, num2) => num1 + num2
+
+let addArrow2 = (num1, num2) => {
+    return num1 + num2
+}
+
 
 
 
