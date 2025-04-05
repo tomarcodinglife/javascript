@@ -112,27 +112,17 @@ functionLogin("", "") // Please enter username
 
 
 // Function declaration
-// Function declaration is a function that is defined in a declaration statement.
-// It is hoisted to the top of the code, which means it can be called before it is defined.
-// It is also called a function statement.
-// It is a named function that can be called by its name.
-// It is a function that is defined in a declaration statement.
-// It is a function that is defined in a declaration statement and not in an expression statement.
-// It is a function that is defined in a declaration statement and not in an expression statement and not in an arrow function.
+/*Function declaration is a function that is defined in a declaration statement.
+// It is hoisted to the top of the code, which means it can be called before it is defined. It is also called a function statement. It is a named function that can be called by its name. It is a function that is defined in a declaration statement. It is a function that is defined in a declaration statement and not in an expression statement. It is a function that is defined in a declaration statement and not in an expression statement and not in an arrow function.
+*/
 
 function add(num1, num2){
     return num1 + num2
 }
 
 // Function expression
-// Function expression is a function that is defined inside an expression and not in a declaration statement.
-// It is not hoisted to the top of the code, which means it cannot be called before it is defined.
-// It is also called a function literal.
-// It is an anonymous function that can be called by its name.
-// It is a function that is defined in an expression statement.
-// It is a function that is defined in an expression statement and not in a declaration statement.
-// It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function.
-// It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function and not in a function literal.   
+/* Function expression is a function that is defined inside an expression and not in a declaration statement. It is not hoisted to the top of the code, which means it cannot be called before it is defined. It is also called a function literal.It is an anonymous function that can be called by its name. It is a function that is defined in an expression statement. It is a function that is defined in an expression statement and not in a declaration statement. It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function. It is a function that is defined in an expression statement and not in a declaration statement and not in an arrow function and not in a function literal.   
+*/
 
 let addNum = function (num1, num2){
     return num1 + num2
@@ -157,8 +147,30 @@ let addArrow2 = (num1, num2) => {
     return num1 + num2
 }
 
+// Function expression with arrow function with default parameter
+// Arrow function is a function that is defined in an expression statement and not in a declaration statement.
+// It is not hoisted to the top of the code, which means it cannot be called before it is defined.
+// It is also called a function literal.
+// It is an anonymous function that can be called by its name.
+// It is a function that is defined in an expression statement.
+// It is a function that is defined in an expression statement and not in a declaration statement.
 
 
+const loginMessage = function (username = "user", str = "@gmail.com") {
+    username = username || "user"
+
+    function emailPrint (){
+        email = username + str
+        return email
+    }
+    email = emailPrint()
+    console.log(`Hi ${username}, welcome to dashboard, your email is ${email}`)
+    return `Hi ${username}, welcome to dashboard your email is ${email}`
+}
+
+loginMessage("sujit", "tomar.com") // Hi sujit, welcome to dashboard, your email is sujittomar.com
+loginMessage("amit") // Hi amit, welcome to dashboard, your email is amit@gmail.com
+loginMessage() // Hi user, welcome to dashboard, your email is user@gmail.com
 
 
 
