@@ -10,4 +10,4 @@
 // iffi function with parameter
 ((name = "Sujit") => {
     console.log(`Hello, ${name} this is a message from the loginMesage function.`);
-})(); // Immediately Invoked Function Expression (IIFE)
+})("Rohit"); // Immediately Invoked Function Expression (IIFE)
