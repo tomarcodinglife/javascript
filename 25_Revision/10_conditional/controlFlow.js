@@ -1,7 +1,6 @@
 // control flow
 // if, else if, else
 // switch case
-// for, while, do while
 // break, continue
 // try, catch, finally
 // throw
@@ -47,3 +46,58 @@ if (userName == "sujit") (console.log(`Hi ${userName} welcome to dashboard`))
 let bankBalance = 1000;
 let myacbalance = (bankBalance >= 50000) ? `Hi ${userName} You are Reach` : `Hi ${userName} You are Poor`;
 console.log(myacbalance) // Hi sujit You are Poor
+
+
+// switch case statement
+// switch case statement is used to execute a block of code if the condition is true and another block of code if the condition is false and another block of code if the condition is false.
+
+let userRole = "admin";
+switch (userRole) {
+    case "admin":
+        console.log("Hi Admin, welcome to dashboard") // Hi Admin, welcome to dashboard
+        break;
+    case "user":
+        console.log("Hi User, welcome to dashboard")
+        break;
+    case "guest":
+        console.log("Hi Guest, welcome to dashboard")
+        break;
+    default:
+        console.log("Hi User, Please sign in dashboard")
+}
+
+
+// break statement
+// break statement is used to exit the loop or switch case statement.
+
+for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        break; // exit the loop
+    }
+    console.log(i) // 0 1 2 3 4
+}
+
+// continue statement is used to skip the current iteration of the loop and continue with the next iteration.
+for (let i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue; // skip the current iteration
+    }
+    console.log(i) // 0 1 2 3 4 6 7 8 9
+}
+
+
+// try catch statement
+// try catch statement is used to handle errors in the code. It is used to execute a block of code and if an error occurs, it will be caught by the catch block and the code will not be terminated.
+// It is used to handle errors in the code and prevent the code from terminating.
+
+try {
+    let num = 10;
+    let result = num / 0; // division by zero
+    console.log(result) // Infinity
+}
+catch (error) {
+    console.log(error) // Infinity
+}
+
+
+
