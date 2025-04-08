@@ -4,7 +4,6 @@
 // break, continue
 // try, catch, finally
 // throw
-// if statement
 
 
 let login = "true";
@@ -98,6 +97,39 @@ try {
 catch (error) {
     console.log(error) // Infinity
 }
+
+// throw statement
+// throw statement is used to throw an error in the code. It is used to create a custom error message and throw it in the code.
+// It is used to create a custom error message and throw it in the code.
+
+try {
+    let num = 10;
+    if (num < 0) {
+        throw new Error("Number is negative") // throw an error
+    }
+    console.log(num) // 10
+}catch (error) {
+    console.log(error) // Number is negative
+}
+// finally statement
+// finally statement is used to execute a block of code after the try catch statement. It is used to execute a block of code after the try catch statement and it will always be executed whether an error occurs or not.
+// It is used to execute a block of code after the try catch statement and it will always be executed whether an error occurs or not.
+
+try {
+    let num = 10;
+    if (num < 0) {
+        throw new Error("Number is negative") // throw an error
+    }
+    console.log(num) // 10
+}catch (error) {
+    console.log(error) // Number is negative
+}
+finally {
+    console.log("This is finally block") // This is finally block
+}
+// finally statement is used to execute a block of code after the try catch statement. It is used to execute a block of code after the try catch statement and it will always be executed whether an error occurs or not.
+// It is used to execute a block of code after the try catch statement and it will always be executed whether an error occurs or not.
+
 
 
 
