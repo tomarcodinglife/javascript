@@ -208,4 +208,29 @@ for (let [key, value] of myMap) {
     }
 }
 
+// for each loop with array it can run without index value
+let array4 = ["Sujit", "Delhi", "India"]
+let index6 = 0
+array4.forEach(function (element) {
+    console.log(`${index6} - ${element}`)
+    index6++
+})
+
+// for each loop with arrow function
+let array5 = ["Sujit", "Delhi", "India"]
+let index7 = 0
+array5.forEach((element) => {
+    console.log(`${index7} - ${element}`)
+    index7++
+})
+
+// function and for each seprate
+
+function sujit(array5){
+    console.log(array5)
+}
+array5.forEach(sujit)
+
+
+
 
