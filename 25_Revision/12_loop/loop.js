@@ -271,3 +271,26 @@ let myNewArray = newArray.map(function (element) {
 })
 
 console.log(myNewArray) // [11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+arr.forEach((element) => {console.log(element + 10)})
+console.log(typeof(arr)) // object
+console.log(Array.isArray(arr)) // true
+
+let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const newArr1 = arr1
+                .map((element) => (element + 10))
+                .map((element) => (element + 5))
+                .filter((element) => (element > 20))
+console.log(newArr1) // [ 21, 22, 23, 24, 25 ]
+
+let array7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let newArray7 = array7.reduce((accumulator, currentValue) => {
+    console.log(`accumulator ${accumulator}, currentValue ${currentValue}`)
+    return accumulator + currentValue}, 0) //  0 is initial value of accumulator
+console.log(newArray7) // 55
+console.log(array7.reduce((accumulator, currentValue) => accumulator + currentValue, 0)) // 50
+
+
