@@ -209,28 +209,32 @@ for (let [key, value] of myMap) {
 }
 
 // for each loop with array it can run without index value
+// for each not return anything it just loop through the array
 let array4 = ["Sujit", "Delhi", "India"]
-let index6 = 0
-array4.forEach(function (element) {
+array4.forEach(function (element, index6) {
     console.log(`${index6} - ${element}`)
-    index6++
 })
 
 // for each loop with arrow function
 let array5 = ["Sujit", "Delhi", "India"]
-let index7 = 0
-array5.forEach((element) => {
+
+array5.forEach((element, index7) => {
     console.log(`${index7} - ${element}`)
-    index7++
 })
 
 // function and for each seprate
-
-function sujit(array5){
-    console.log(array5)
+function sujit(array5, index, array) {
+    console.log(array5, index, array)
 }
 array5.forEach(sujit)
 
 
+// filter 
+let array6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let filterArray = array6.filter(function (element) {
+    return element > 5
+})
 
+console.log(filterArray) // [6, 7, 8, 9, 10]
+console.log(array6.filter((element) => element > 5)) // [6, 7, 8, 9, 10]  
 
