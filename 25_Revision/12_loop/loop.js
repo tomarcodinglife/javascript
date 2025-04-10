@@ -183,31 +183,6 @@ for (let element of string1) {
     index5++
 }
 
-// maps loop
-let myMap = new Map()
-myMap.set("name", "Sujit")
-myMap.set("age", 25)
-myMap.set("city", "Delhi")
-myMap.set("hobbies", ["reading", "traveling", "sports"])
-myMap.set("address", { city: "Delhi", state: "Delhi" })
-myMap.set("isMarried", false)
-myMap.set("isSingle", true)
-myMap.set("isDivorced", false)
-myMap.set("isEngaged", false)
-
-
-for (let [key, value] of myMap) {
-    if (Array.isArray(value)) {
-        console.log(`${key} - ${value.join(", ")}`)
-    } else if (typeof value === "object") {
-        for (let [key1, value1] of Object.entries(value)) {
-            console.log(`${key} - ${key1} - ${value1}`)
-        }
-    } else {
-        console.log(`${key} - ${value}`)
-    }
-}
-
 // for each loop with array it can run without index value
 // for each not return anything it just loop through the array
 let array4 = ["Sujit", "Delhi", "India"]
@@ -229,68 +204,9 @@ function sujit(array5, index, array) {
 array5.forEach(sujit)
 
 
-// filter 
-let array6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let filterArray = array6.filter(function (element) {
-    return element > 5
-})
-
-console.log(filterArray) // [6, 7, 8, 9, 10]
-console.log(array6.filter((element) => element > 5)) // [6, 7, 8, 9, 10]  
-
-// filter with object
-
-let students = [
-    { name: "Sujit", age: 25, city: "Delhi" },
-    { name: "Rahul", age: 30, city: "Mumbai" },
-    { name: "Amit", age: 35, city: "Bangalore" },
-    { name: "Ravi", age: 40, city: "Chennai" }
-]
-
-let filterStudents = students.filter(function (student) {
-    return student.age > 30
-})
-console.log(filterStudents) 
-
-/* 
-
-[
-  { name: 'Amit', age: 35, city: 'Bangalore' },
-  { name: 'Ravi', age: 40, city: 'Chennai' }
-]
-
-*/
-
-let filterStudents1 = students.filter((student) => student.age > 30 && student.city === "Bangalore")
-console.log(filterStudents1) // [ { name: 'Amit', age: 35, city: 'Bangalore' } ]    
-
-
-let newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let myNewArray = newArray.map(function (element) {
-    return element + 10
-})
-
-console.log(myNewArray) // [11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
-
-
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 arr.forEach((element) => {console.log(element + 10)})
 console.log(typeof(arr)) // object
 console.log(Array.isArray(arr)) // true
-
-let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-const newArr1 = arr1
-                .map((element) => (element + 10))
-                .map((element) => (element + 5))
-                .filter((element) => (element > 20))
-console.log(newArr1) // [ 21, 22, 23, 24, 25 ]
-
-let array7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let newArray7 = array7.reduce((accumulator, currentValue) => {
-    console.log(`accumulator ${accumulator}, currentValue ${currentValue}`)
-    return accumulator + currentValue}, 0) //  0 is initial value of accumulator
-console.log(newArray7) // 55
-console.log(array7.reduce((accumulator, currentValue) => accumulator + currentValue, 0)) // 50
 
 
