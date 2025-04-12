@@ -16,7 +16,7 @@
 let title = document.querySelectorAll(".title");
 let container = document.getElementsByClassName("container");
 let list_item1 = document.querySelectorAll(".mylist");
-let list_item2 = document.querySelectorAll(".mylist");
+let list_item2 = document.querySelectorAll(".Tlist");
 
 title[2].textContent = "Hello World!";
 title[2].style.color = "red";
@@ -30,4 +30,10 @@ list_item1.forEach((item) => {
     }
 );
 
-Array.from(list_item2).
+let myNewList = Array.from(list_item2)
+myNewList.forEach((item) => {
+    // item.style.backgroundColor = "blue";
+    item.style.color = "yellow";
+    item.style.padding = "10px";
+    }
+);
