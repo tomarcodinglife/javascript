@@ -4,7 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="04_fourth.css">
+    <!-- <link rel="stylesheet" href="04_fourth.css">-->
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    background-color: aqua;
+    margin-top: 5%;
+}
+
+.container .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    margin: 5px;
+}
+
+.container .sub-container div {
+    width: 80%;
+    height: 100%;
+    background-color: #03ab41;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+    padding: 20px;
+    margin: 10px ;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
+
 </head>
 <body>
     <div class="container" id="container">
@@ -53,5 +98,21 @@
         </div>
     </div>
 </body>
-<script src="04_fourth.js"></script>
+<script>
+
+let childFirst = document.querySelector('#sub-container01');
+// let childSecond = document.querySelector('#sub-container02');
+let childSecond = childFirst.nextElementSibling;
+let parent = childFirst.parentElement;
+
+console.log(parent); //
+console.log(parent.childNodes); // Get all child elements of the parent element
+
+parent.style.backgroundColor = '#0f0f0f0f'; // Change the background color of the parent element
+childFirst.style.backgroundColor = 'green'; // Change the background color of the first child element
+childSecond.style.backgroundColor = 'green'; // Change the background color of the first child element
+
+
+
+</script>
 </html>

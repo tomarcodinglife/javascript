@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
-    <link rel="stylesheet" href="02_second.css">
+    <!-- <link rel="stylesheet" href="02_second.css">-->
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #131313;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+</style>
 </head>
 <body class="body" id="body">
     <h3 class="title" id="title">Document Object Model</h3>
@@ -18,5 +37,25 @@
         <div class="day">Sunday</div>
     </div>
 </body>
-<script src="02_second.js"></script>
+<script >
+
+let parent = document.querySelector('.parents');
+let child = parent.children;
+let childLength = child.length;
+let child1 = parent.children[0];
+let child2 = child[1];
+let child3 = child[2];
+let child4 = child[3];
+let child5 = child[4];
+let child6 = child[5];
+let child7 = child[6];
+
+child1.style.color = 'red';
+content = "Hello World!";
+
+for (let i = 0; i < childLength; i++) {
+    child[i].innerHTML = `${content}` + (i + 1);
+}
+
+</script>
 </html>
