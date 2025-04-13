@@ -13,22 +13,26 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 10px;
+}
+
 </style>
 
 </head>
 <body class="body" id="body">
 
     <div>
-        <ul>
-            abc
-            <li style="list-style-type: circle;">ABC</li>
-            <li style="list-style-type: circle;">ABC</li>
-            <li style="list-style-type: circle;">ABC</li>
-            <li style="list-style-type: circle;">ABC</li>
-            <li style="list-style-type: circle;">ABC</li>
-            
+        <ul style="padding: 20px;">
+            <li style="list-style-type: circle; padding: 20px;"> ABC </li>
+            <li style="list-style-type: circle; padding: 20px;"> ABC </li>
+            <li style="list-style-type: circle; padding: 20px;"> ABC </li>
+            <li style="list-style-type: circle; padding: 20px;"> ABC </li>
+            <li style="list-style-type: circle; padding: 20px;"> ABC </li>
         </ul>
-          
     </div>
 
 </body>
@@ -43,14 +47,32 @@ function createElement (appendClassName, appendTagName, appendText){
     document.querySelector(`.${appendClassName}`).appendChild(element); // Append element
 }
 
-function createList (appendClassName, olliTagName, listText){
-    const element = document.createElement(olliTagName); // Create a new div element
+function createUnorderList (appendClassName, listText, margin, padding, listStyleType){
+    const ulelement = document.createElement("ul"); // Create a new element
+    const lielement = document.createElement("li"); // Create a new element
     const elementText = document.createTextNode(listText); // Create a text node
-    element.appendChild(elementText); // Append the text node to the element
-    document.querySelector(`.${appendClassName}`).appendChild(element); // Append element
+
+    lielement.appendChild(elementText); // Append the text node to the element
+    ulelement.appendChild(lielement); // Append the text node to the element
+    document.querySelector(`.${appendClassName}`).appendChild(ulelement); // Append element
+
+    element.style.listStyleType = listStyleType; 
+    element.style.padding = padding; 
+    element.style.margin = margin; 
 }
 
+// function createOrderList (appendClassName, listText, margin, padding, listStyleType){
+//     const element = document.createElement("ol"); // Create a new element
+//     const elementText = document.createTextNode(listText); // Create a text node
+//     element.appendChild(elementText); // Append the text node to the element
+//     document.querySelector(`.${appendClassName}`).appendChild(element); // Append element
+//     element.style.listStyleType = listStyleType; // Set the list style type to circl e
+//     element.style.padding = padding; // Set the padding to 20px
+//     element.style.margin = margin; // Set the margin to 20px
+// }
+
 createElement('body', 'div', 'Sujit Tomar'); // Create a new div element
+createUnorderList('body', "Sujit Kumar Singh", "20px", "20px", "disc"); // Create a new element
 
 
 
