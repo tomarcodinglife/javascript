@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }         
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #e7e6e6;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    #form-container label {
+        margin: 10px 5px;
+        font-size: 18px;
+
+    }
+
+    #form-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #form-container button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form-container button:hover {
+        background-color: #218838;
+    }
+
+    #result {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #result-text {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+
+    #form legend {
+        font-size: 18   px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    #form-container, #result, #weight-guide {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    #button {
+        width: 100%;
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+    <form action="" id="form" method="post">
+        <fieldset>
+            <legend>BMI Calculator </legend>
+
+            <div id="form-container">
+                <label for="height">Height in CM </label>
+                <input type="text" id="hight" name="hight" placeholder="Enter your hight in CM" required> <br><br>
+                <label for="weight">Weight in KG </label>
+                <input type="text" id="weight" name="weight" placeholder="Enter your weight in KG" required> <br><br>
+                <button id="button">Calculate</button>
+            </div>
+
+            <div id="result" style="display: none;">
+                <h1 id="result-text"></h1>
+            </div>
+
+            <div id="weight-guide">
+                <h3>Weight Guide</h3>
+                <p>Underweight: Less than 18.5</p>
+                <p>Normal weight: 18.5 - 24.9</p>
+                <p>Overweight: 25 - 29.9</p>
+                <p>Obesity: 30 or greater</p>
+            </div>
+        </fieldset>
+                
+    </form>
+</body>
+<script>
+
+    let form = document.getElementById('form');
+
+    form.addEventListener('submit', () =>{
+
+        event.preventDefault(); // Prevent form submission
+
+        let height = document.getElementById('hight').value;
+        let weight = document.getElementById('weight').value;
+
+        height = parseFloat(height); // Convert height to a number
+        weight = parseFloat(weight); // Convert weight to a number
+
+        if (isNaN(height) || isNaN(weight)) {
+            alert('Please enter valid numbers for height and weight.');
+            return;
+        } // Check if height and weight are numbers
+        if (height <= 0 || weight <= 0) {
+            alert('Height and weight must be positive numbers.');
+            return;
+        } // Check if height and weight are positive numbers    
+
+        if (height > 300 || weight > 500) {
+            alert('Please enter realistic values for height and weight.');
+            return;
+        } // Check if height and weight are realistic values
+
+        if (height < 50 || weight < 20) {
+            alert('Please enter realistic values for height and weight.');
+            return;
+        } // Check if height and weight are realistic values
+
+        
+        let heightInMeters = height / 100; // Convert height to meters
+        let bmi = weight / (heightInMeters * heightInMeters); // Calculate BMI
+
+        let resultText = document.getElementById('result-text');
+        resultText.innerHTML = `Your BMI is: ${bmi.toFixed(2)}`; // Display BMI
+        // resultText.innerHTML = `Your BMI is: ${bmi}`; // Display BMI
+
+        let resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block'; // Show the result div
+
+    })
+
+</script>
+</html>

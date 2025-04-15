@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* ************************************************************************** */
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 35%;
+    /* height: 100vh; */
+    /* width: 100vw; */
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* ************************************************************************** */
+</style>
+</head>
+<body>
+    <div>
+        <button class="button" id="black" style="background-color: black;">Click Me</button>
+        <button class="button" id="blue"  style="background-color: blue;">Click Me</button>
+        <button class="button" id="red" style="background-color: red;">Click Me</button>
+        <button class="button" id="darkcyan" style="background-color: darkcyan;">Click Me</button>
+        <button class="button" id="darkgoldenrod" style="background-color: darkgoldenrod;">Click Me</button>
+        <button class="button" id="darkmagenta" style="background-color: darkmagenta;">Click Me</button>
+    </div>
+</body>
+<script>
+/* ************************************************************************** */
+    console.log('------------------ JS ------------------');
+
+let button = document.querySelectorAll('.button');
+let body = document.querySelector('body');
+
+button.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let color = btn.style.backgroundColor;
+        body.style.backgroundColor = color;
+    });
+});
+
+/* ************************************************************************** */
+</script>
+</html>
