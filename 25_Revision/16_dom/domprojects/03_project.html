@@ -14,18 +14,243 @@
 
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: #e7e6e6;
-        margin: 10px;
-        padding: 10px;
+        background-color: #000000;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+
+    #main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 80vh;
+        width: 80vw;
+        background-color: #252525;
+        margin: 15px;
+        border-radius: 5rem;
+        z-index: 1;
+        position: relative;
+        border: solid .5rem rgb(0, 218, 247);
+    }
+
+    /* #main ::before {
+        content: '';
+        display: block;
+        height: 85vh;
+        width: 85vw;
+        background-color: rgb(0, 218, 247);
+        border-radius: 3rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        
+    } */
+
+    #digital-clock-container {
+        height: 45%;
+        width: 45%;
+        grid-template-rows: 35% 65%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 3rem;
+        border-radius: 3rem;
+        background-color: rgb(0, 0, 0);
+        margin: 5px;
+        position: relative;
+        /* z-index: 100; */
+    }
+
+    #analog-clock-container {
+        height: 45%;
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(0, 0, 0);
+        border-radius: 3rem;
+        margin: 5px;
+        /* position: relative; */
+        /* z-index: 98; */
+            
+    }
+
+    #analog-clock {
+        height: 10rem;
+        width: 10rem;
+        border-radius: 50%;
+        background-color: rgb(199, 199, 199);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* rotate: 45deg; */
+        background-color: radial-gradient(circle, rgba(68, 68, 68, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    .time-number {
+        transform: rotate(calc(var(--n) * 30deg));
+        position: absolute;
+        text-align: center;
+        inset: 5px;
+        font-size: 0.9rem;
+        color: rgb(0, 0, 0);
+    }
+
+    .time-number b {
+        transform: rotate(calc(var(--n) * -30deg));
+        display: inline-block;
+        font-size: 0.9rem;
+        color: rgb(0, 0, 0);
+    }
+
+    .center-dot {
+        height: 0.8rem;
+        width: 0.8rem;
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .hour-hand, .minute-hand{
+        --rotate : 0;
+        position: absolute;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 0) rotate(calc(var(--rotate)deg));
+        transform-origin: bottom;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .second-hand {
+        --rotate : 0;
+        position: absolute;
+        border-radius: 5px;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 0) rotate(calc(var(--rotate)deg));
+        transform-origin: bottom;
+        /* transition: transform 0.5s ease-in-out; */
+    }
+
+    .hour-hand {
+        --rotate : 0;
+        height: 2.5rem;
+        width: 0.5rem;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .minute-hand {
+        height: 3.5rem;
+        width: 0.3rem;
+        background-color: rgb(84, 0, 180);
+    }
+
+    .second-hand {
+        height: 4.5rem;
+        width: 0.2rem;
+        background-color: rgb(15, 156, 121);
+    }
+
 </style>
 
 <body>
-    <div id="clock-container">
-        
-    </div>
+    <main id="main">
+        <div id="analog-clock-container">
+            <div id="analog-clock">
+                <div class="time-number" style="--n:1"><b>1</b></div>
+                <div class="time-number" style="--n:2"><b>2</b></div>
+                <div class="time-number" style="--n:3"><b>3</b></div>
+                <div class="time-number" style="--n:4"><b>4</b></div>
+                <div class="time-number" style="--n:5"><b>5</b></div>
+                <div class="time-number" style="--n:6"><b>6</b></div>
+                <div class="time-number" style="--n:7"><b>7</b></div>
+                <div class="time-number" style="--n:8"><b>8</b></div>
+                <div class="time-number" style="--n:9"><b>9</b></div>
+                <div class="time-number" style="--n:10"><b>10</b></div>
+                <div class="time-number" style="--n:11"><b>11</b></div>
+                <div class="time-number" style="--n:12"><b>12</b></div>
+                <div class="hour-hand" id="hour-hand"></div>
+                <div class="minute-hand" id="minute-hand"></div>
+                <div class="second-hand" id="second-hand"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
+
+        <div id="digital-clock-container">
+            <div id="clock-container">
+                <h1 id="clock">00:00:00</h1>
+            </div>
+    
+            <div>
+                <h1 id="date">DD/MM/YYYY</h1>
+            </div>
+        </div>
+    </main>
 </body>
 <script>
+
+    // digital clock 
+    const clock = document.getElementById('clock');
+    const mydate = document.getElementById('date');
+    let date = new Date();
+
+    setInterval(() => {
+        date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+
+    setInterval(() => {
+        let todayDate = new Date();
+        let currentDate = String(todayDate.getDate()).padStart(2, '0');
+        let currentMonth = String(todayDate.getMonth()+1).padStart(2, '0');
+        let currentYear = todayDate.getFullYear();
+        const fullDate = `${currentDate}/${currentMonth}/${currentYear}` 
+        mydate.innerHTML = fullDate;
+    }, 1000);
+
+    // analog clock
+
+    const hourHand = document.getElementById('hour-hand');
+    const minuteHand = document.getElementById('minute-hand');
+    const secondHand = document.getElementById('second-hand');
+
+    function setRotation(element, rotate) {
+        element.style.transform = `translate(-50%, 0) rotate(${rotate * 360}deg)`;
+    }
+
+    function updateClock() {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hours = now.getHours();
+
+        const secondsRatio = seconds / 60;
+        const minutesRatio = (minutes + secondsRatio) / 60;
+        const hoursRatio = (hours % 12 + minutesRatio) / 12;
+
+        setRotation(secondHand, secondsRatio);
+        setRotation(minuteHand, minutesRatio);
+        setRotation(hourHand, hoursRatio);
+    } 
+
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+
+
 
 </script>
 </html>
