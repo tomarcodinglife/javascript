@@ -61,7 +61,7 @@ body {
     text-align: center;
 }
 
-#sub-container2 #submit {
+#sub-container2 #submit-btn {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -71,11 +71,11 @@ body {
     font-size: 16px;
 }
 
-#sub-container2 #submit:hover {
+#sub-container2 #submit-btn:hover {
     background-color: #45a049;
 }
 
-#sub-container2 #submit:active {
+#sub-container2 #submit-btn:active {
     background-color: #3e8e41;
     transform: translateY(2px);
 }
@@ -87,16 +87,16 @@ body {
     <div id="container">
         <div class="sub-container" id="sub-container1">
             <h2>Number Guessing Game</h2>
-            <p>Try and Guess a random number between 1 to 100</p>
-            <p>You have 10 attempts to guess the right number</p>
+            <p>Try and Guess a random number between 1 to 5</p>
+            <p>You have 05 attempts to guess the right number</p>
         </div>
 
         <div class="sub-container" id="sub-container2">
             <label for="guess-number">Guess Number:
-                <input type="text" id="guess-number" min="1" max="100" required>
+                <input type="text" id="guess-number" min="1" max="5" required>
             </label>
             <br>
-            <label for="submit-button"><input type="submit" id="submit" value="submit-guess""></label>
+            <label for="submit-button"><input type="submit" id="submit-btn" value="submit-guess""></label>
         </div>
 
         <div class="sub-container" id="sub-container3">
@@ -109,12 +109,14 @@ body {
 <script>
 
 const userInput = document.querySelector('#guess-number');
-const submitButton = document.querySelector('#submit');
+// let guess = userInput.value;
+const submitButton = document.querySelector('#submit-btn');
 const result = document.querySelector('.guesses');
 const lastResult = document.querySelector('.last-result');
 const lowOrHigh = document.querySelector('.lowOrHigh');
-const randomNumber = Math.floor(Math.random() * 100) + 1;
+const randomNumber = Math.floor(Math.random() * 5) + 1;
 const startOver = document.querySelector('#sub-container2');
+const form = document.querySelector('container');
 
 const paragraph = document.createElement('p');
 
@@ -123,26 +125,25 @@ let numberOfGuesses = 1;
 let playGame = true;
 
 if(playGame){
-    submitButton.addEventListner('click', function (e) {
+    submitButton.addEventListener('click', function (e) {
         e.preventDefault();
         const guess = parseInt(userInput.value);
         validateGuess(guess)
-    });
-
-
+    })
 }
 
 function validateGuess(guess) {
-    if(guess < 1 || guess > 100) {
-        alert('Please enter a number between 1 and 100');
+    if(guess < 1 || guess > 5) {
+        displayMessage('Please enter a number between 1 and 5');
         return false;
     } else if (isNaN(guess)) {
-        alert('Please enter a valid number');
+        displayMessage('Please enter a valid number');
         return false;
     } else {
         preGuess.push(guess);
-        if (numberOfGuesses === 11) {
-            displayMessage(`!!!GAME OVER!!!`);
+        result.innerHTML += `${guess}, `;
+        if (numberOfGuesses === 5) {
+            displayGuess(`!!!GAME OVER!!! Because you have used all your guesses`);
             endGame();
         } else {
             displayGuess(guess);
@@ -165,17 +166,19 @@ function checkGuess(guess){
 
 function displayGuess(guess){
     userInput.value = '';
-    result.innerHTML += `${guess}, `;
-    numberOfGuesses++;
-    lastResult.textContent = `${10 - numberOfGuesses} guesses remaining`;
+    // numberOfGuesses++;
+    lastResult.innerHTML = `${5 - numberOfGuesses} guesses remaining`;
 }
 
 function displayMessage(message){
-    lowOrHigh.textContent = `${message}`;
+    lowOrHigh.innerHTML = `<h3>${message} </h3>`;
+    lowOrHigh.style.color = 'red';
 }
 
 function endGame(){
-    //
+    userInput.disabled = true;
+    submitButton.disabled = true;
+    alert(`Game Over! Refresh the page to start a new game`);
 }
 
 function newGame(){
@@ -187,7 +190,7 @@ function newGame(){
 </script>
 </html>
 
-// function validateInput() {
+<!-- // function validateInput() {
 //     if (userInput.value < 1 || userInput.value > 100) {
 //         alert('Please enter a number between 1 and 100');
 //         return false;
@@ -257,7 +260,9 @@ function newGame(){
 //     }
 // });
 
-// userInput.focus();
+// userInput.focus(); -->
 
-// </script>
-// </html>
+
+
+<!-- </script>
+</html> -->
