@@ -46,7 +46,7 @@ body {
     /* background-color: aqua; */
 }
 
-#sub-container1.h2, #sub-container1 p, #sub-container2 label, #sub-container3 p {
+#sub-container1 h2, #sub-container1 p, #sub-container2 label, #sub-container3 p {
     /* background-color: #dd7676; */
     margin-top: 25px;
 }
@@ -116,7 +116,7 @@ const lastResult = document.querySelector('.last-result');
 const lowOrHigh = document.querySelector('.lowOrHigh');
 const randomNumber = Math.floor(Math.random() * 5) + 1;
 const startOver = document.querySelector('#sub-container2');
-const form = document.querySelector('container');
+const form = document.querySelector('#container');
 
 const paragraph = document.createElement('p');
 
@@ -180,25 +180,40 @@ function endGame(){
     userInput.disabled = true;
     submitButton.disabled = true;
     // displayMessage(`Game Over! Refresh the page to start a new game`);
-    endGame(true);
-}
-
-function resetGame(){
-
+    startGame(true);
 }
 
 function startGame(endGame){
     if (endGame){
         const startButton = document.createElement('button');
-        startButton.textContent = 'Start new game';
+        startButton.textContent = 'Start Game';
         startOver.appendChild(startButton);
-        startButton.addEventListener('click', resetGame);
+        startButton.style.backgroundColor = 'green';
+        startButton.style.color = 'white';
+        startButton.style.padding = '10px 20px';
+        startButton.style.border = 'none';
+        startButton.style.borderRadius = '5px';
+        startButton.style.cursor = 'pointer';
+        startButton.style.fontSize = '16px';
+        startButton.style.marginTop = '10px';
+
+        startButton.addEventListener('click', function(){
+            numberOfGuesses = 1;
+            preGuess = [];
+            playGame = true;
+            result.innerHTML = '';
+            // const resetParas = document.querySelectorAll('.resultParas p');
+            // for (const resetPara of resetParas) {
+            //     resetPara.textContent = '';
+            // }
+            userInput.disabled = false;
+            submitButton.disabled = false;
+            startOver.removeChild(startOver.lastChild);
+            userInput.value = '';
+            userInput.focus();
+        })
     }
-
-
 }
-
-
 
 </script>
 </html>
