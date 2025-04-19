@@ -80,7 +80,7 @@
     </div>
 
     <div id="prevent-default-container" style="width: 500px; height: 250px; background-color: rgb(226, 226, 226);">
-        <h1 id="head">Stop Propagation</h1>
+        <h1 id="head">Prevent Default</h1>
         <ul id="list-of-stop-propagation" style="list-style-type: none; padding: 0;">
             <a href="http://google.com" id="google-link" target="_blank">Google</a> <br>
             <a href="http://yahoo.com" id="yahoo-link" target="_blank">Yahoo</a> <br>
@@ -127,9 +127,10 @@
     }, false);
 
     eventDelegation.addEventListener("click", function(e) {
-            if (e.target.tagName === "LI") {
-                alert(`Event Delegation - Div Clicked ${e.target.textContent}`);
-            }
+        if (e.target.tagName === "LI") {
+            alert(`Event Delegation - Div Clicked ${e.target.textContent}`);
+            console.log(e.target);
+        }
     }, false);
 
     bubblingStart.addEventListener("click", function() {
