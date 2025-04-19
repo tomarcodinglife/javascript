@@ -1,0 +1,170 @@
+<!-- 
+ 
+// Type of Event Propgation 
+// 1. Event Bubbling
+// 2. Event Capturing
+// 3. Event Targeting
+// 4. Event Delegation
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="event-bubbling" style="width: 500px; height: 200px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Event Bubbling</h1>
+        <ul id="list-of-event-bubbling" style="list-style-type: none; padding: 0;">
+            <li id="li1">Item 1</li>
+            <li id="li2">Item 2</li>
+            <li id="li3">Item 3</li>
+            <li id="li4">Item 4</li>
+            <li id="li5">Item 5</li>
+        </ul>
+        <button id="bubbling-start">Start</button>
+    </div>
+
+    <div id="event-capturing" style="width: 500px; height: 200px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Event Capturing</h1>
+        <ul id="list-of-event-capturing" style="list-style-type: none; padding: 5px;">
+            <li id="li1">Item 1</li>
+            <li id="li2">Item 2</li>
+            <li id="li3">Item 3</li>
+            <li id="li4">Item 4</li>
+            <li id="li5">Item 5</li>
+        </ul>
+        <button id="capturing-start">Start</button>
+    </div>
+
+    <div id="event-targeting" style="width: 500px; height: 200px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Event Targeting</h1>
+        <ul id="list-of-event-targeting" style="list-style-type: none; padding: 0;">
+            <li id="li1">Item 1</li>
+            <li id="li2">Item 2</li>
+            <li id="li3">Item 3</li>
+            <li id="li4">Item 4</li>
+            <li id="li5">Item 5</li>
+        </ul>
+        <button id="targeting-start">Start</button>
+    </div>
+
+    <div id="event-delegation" style="width: 500px; height: 200px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Event Delegation</h1>
+        <ul id="list-of-event-delegation" style="list-style-type: none; padding: 0;">
+            <li id="li1">Item 1</li>
+            <li id="li2">Item 2</li>
+            <li id="li3">Item 3</li>
+            <li id="li4">Item 4</li>
+            <li id="li5">Item 5</li>
+        </ul>
+        <button id="delegation-start">Start</button>
+    </div>
+
+    <div id="stop-propagation-container" style="width: 500px; height: 250px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Stop Propagation</h1>
+        <ul id="list-of-stop-propagation" style="list-style-type: none; padding: 0;">
+            <a href="http://google.com" id="google-link">Google</a> <br>
+            <a href="http://yahoo.com" id="yahoo-link">Yahoo</a> <br>
+            <a href="http://bing.com" id="bing-link">Bing</a> <br>
+            <a href="http://duckduckgo.com" id="duckduckgo-link">DuckDuckGo</a> <br>
+            <a href="http://ask.com" id="ask link">Ask</a> <br>
+            <a href="http://baidu.com" id="baidu-link">Baidu</a> <br>
+            <a href="http://yandex.com" id="yandex-link">Yandex</a> <br>
+            <a href="http://aol.com" id="aol-link">AOL</a> <br>
+        </ul>
+        <button id="stop-propagation">Start</button>
+    </div>
+
+    <div id="prevent-default-container" style="width: 500px; height: 250px; background-color: rgb(226, 226, 226);">
+        <h1 id="head">Stop Propagation</h1>
+        <ul id="list-of-stop-propagation" style="list-style-type: none; padding: 0;">
+            <a href="http://google.com" id="google-link" target="_blank">Google</a> <br>
+            <a href="http://yahoo.com" id="yahoo-link" target="_blank">Yahoo</a> <br>
+            <a href="http://bing.com" id="bing-link" target="_blank">Bing</a> <br>
+            <a href="http://duckduckgo.com" id="duckduckgo-link" target="blank">DuckDuckGo</a> <br>
+            <a href="http://ask.com" id="ask link" target="_blank">Ask</a> <br>
+            <a href="http://baidu.com" id="baidu-link" target="blank">Baidu</a> <br> 
+            <a href="http://yandex.com" id="yandex-link" target="blank">Yandex</a> <br>
+            <a href="http://aol.com" id="aol-link" target="blank">AOL</a> <br>
+        </ul>
+        <button id="prevent-default">Start</button>
+    </div>
+
+
+
+</body>
+
+<script>
+
+    let eventBubbling = document.getElementById("event-bubbling");
+    let eventCapturing = document.getElementById("event-capturing");   
+    let eventTargeting = document.getElementById("event-targeting");
+    let eventDelegation = document.getElementById("event-delegation");
+    let listOfEventBubbling = document.getElementById("list-of-event-bubbling");
+    let listOfEventCapturing = document.getElementById("list-of-event-capturing");
+    let listOfEventTargeting = document.getElementById("list-of-event-targeting");
+    let listOfEventDelegation = document.getElementById("list-of-event-delegation");
+
+    let bubblingStart = document.getElementById("bubbling-start");
+    let capturingStart = document.getElementById("capturing-start");
+    let targetingStart = document.getElementById("targeting-start");
+    let delegationStart = document.getElementById("delegation-start");
+
+    eventBubbling.addEventListener("click", function() {
+            alert("Event Bubbling - Div Clicked");
+    }, false);
+
+    eventCapturing.addEventListener("click", function() {
+            alert("Event Capturing - Div Clicked");
+    }, true);
+
+    eventTargeting.addEventListener("click", function(e) {
+            alert(`Event Targeting - Div Clicked ${e.target.textContent}`);
+    }, false);
+
+    eventDelegation.addEventListener("click", function(e) {
+            if (e.target.tagName === "LI") {
+                alert(`Event Delegation - Div Clicked ${e.target.textContent}`);
+            }
+    }, false);
+
+    bubblingStart.addEventListener("click", function() {
+        alert("Event Bubbling Start - Button Clicked");
+    }, false);
+
+    capturingStart.addEventListener("click", function() {
+        alert("Event Capturing Start - Button Clicked");
+    }, true);
+
+
+
+// stop propgation
+
+    let stopPropagationContainer = document.getElementById("stop-propagation-container");
+    let stopPropagationStart = document.getElementById("stop-propagation-start");
+
+    stopPropagationContainer.addEventListener("click", function(e){
+        e.stopPropagation();
+
+    }, false);
+
+// preventDefault
+    let preventDefaultContainer = document.getElementById("prevent-default-container");
+    let preventDefaultStart = document.getElementById("prevent-default-start");
+
+
+
+
+// even preventDefault
+
+
+
+
+
+</script>
+
+</html>
