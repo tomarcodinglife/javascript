@@ -67,14 +67,14 @@
     <div id="stop-propagation-container" style="width: 500px; height: 250px; background-color: rgb(226, 226, 226);">
         <h1 id="head">Stop Propagation</h1>
         <ul id="list-of-stop-propagation" style="list-style-type: none; padding: 0;">
-            <a href="http://google.com" id="google-link">Google</a> <br>
-            <a href="http://yahoo.com" id="yahoo-link">Yahoo</a> <br>
-            <a href="http://bing.com" id="bing-link">Bing</a> <br>
-            <a href="http://duckduckgo.com" id="duckduckgo-link">DuckDuckGo</a> <br>
-            <a href="http://ask.com" id="ask link">Ask</a> <br>
-            <a href="http://baidu.com" id="baidu-link">Baidu</a> <br>
-            <a href="http://yandex.com" id="yandex-link">Yandex</a> <br>
-            <a href="http://aol.com" id="aol-link">AOL</a> <br>
+            <a href="http://google.com" id="google-link" target="_blank">Google</a> <br>
+            <a href="http://yahoo.com" id="yahoo-link" target="_blank">Yahoo</a> <br>
+            <a href="http://bing.com" id="bing-link" target="_blank">Bing</a> <br>
+            <a href="http://duckduckgo.com" id="duckduckgo-link" target="_blank">DuckDuckGo</a> <br>
+            <a href="http://ask.com" id="ask link" target="_blank">Ask</a> <br>
+            <a href="http://baidu.com" id="baidu-link" target="_blank">Baidu</a> <br>
+            <a href="http://yandex.com" id="yandex-link" target="_blank">Yandex</a> <br>
+            <a href="http://aol.com" id="aol-link" target="_blank">AOL</a> <br>
         </ul>
         <button id="stop-propagation">Start</button>
     </div>
@@ -157,13 +157,10 @@
     let preventDefaultContainer = document.getElementById("prevent-default-container");
     let preventDefaultStart = document.getElementById("prevent-default-start");
 
-
-
-
-// even preventDefault
-
-
-
+    preventDefaultContainer.addEventListener("click", function(e){
+        e.preventDefault();
+        alert("Prevent Default - Link Clicked");
+    }, false);
 
 
 </script>
