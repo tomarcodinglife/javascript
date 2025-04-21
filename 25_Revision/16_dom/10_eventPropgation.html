@@ -149,7 +149,7 @@
     let stopPropagationStart = document.getElementById("stop-propagation-start");
 
     stopPropagationContainer.addEventListener("click", function(e){
-        e.stopPropagation();
+        e.stopPropagation(); // it is used to stop the event from bubbling up to the parent element.
 
     }, false);
 
@@ -158,7 +158,8 @@
     let preventDefaultStart = document.getElementById("prevent-default-start");
 
     preventDefaultContainer.addEventListener("click", function(e){
-        e.preventDefault();
+        e.preventDefault(); // it is used to prevent the default action of the event from happening.
+        // for example, if you click on a link, it will not redirect to the link.
         alert("Prevent Default - Link Clicked");
     }, false);
 

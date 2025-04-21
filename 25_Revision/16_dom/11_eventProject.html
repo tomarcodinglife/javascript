@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: circle;
+            
+        }
+        li {
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+
+        }
+        img {
+            max-width: 250px;
+            max-height: 250px;
+            height: auto;
+            border-radius: 5px;
+        }
+        p {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+</style>
+
+</head>
+<body>
+    <div>
+        <ul id="images-list">
+            <li id="LeatherShop">
+                <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Leather_Shop" alt="">
+                <br>
+                <p>1. Leather Shop</p>
+            </li>
+
+            <li id="FruitsShop">
+                <img src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Fruits_Shop" alt="">
+                <br>
+                <p>2. Fruits Shop</p>
+            </li>
+
+            <li id="VineShop">
+                <img src="https://images.pexels.com/photos/2159074/pexels-photo-2159074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Vine_Shop" alt="">
+                <br>
+                <p>3. Vine Shop</p>
+            </li>
+
+            <li id="BookShop">
+                <img src="https://images.pexels.com/photos/626986/pexels-photo-626986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Book_Shop" alt="">
+                <br>
+                <p>4. Book Shop</p>
+            </li>
+
+            <li id="FashionShop">
+                <img src="https://images.pexels.com/photos/1488463/pexels-photo-1488463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Fashion_Shop" alt="">
+                <br>
+                <p>5.Fashion Shop</p>
+            </li>
+
+            <li id="GymCenter">
+                <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Gym_Center" alt="">
+                <br>
+                <p>6. Gym Center</p>
+            </li>
+
+            <li id="CosmeticShop">
+                <img src="https://images.pexels.com/photos/13068364/pexels-photo-13068364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Cosmetic_Shop" alt="">
+                <br>
+                <p>7. Cosmetic Shop</p>
+            </li>
+
+            <li id="NurseryShop">
+                <img src="https://images.pexels.com/photos/13758316/pexels-photo-13758316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" id="Nursery_Shop" alt="">
+                <br>
+                <p>8.Nursery Shop</p>
+            </li>
+
+        </ul>
+    </div>
+</body>
+
+<script>
+    console.log("Hi i am from script tag");
+    document.querySelector("#images-list").addEventListener
+    ("click", function(e){
+        // console.log(e);
+    let hideElement = e.target.parentNode;
+    let hiddenElement = hideElement
+
+        if(e.target.tagName === "IMG"){
+            // hideElement.remove();
+            hideElement.parentNode.removeChild(hiddenElement);
+        }
+
+    }, false);
+
+</script>
+
+</html>
