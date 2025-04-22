@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+</style>
+</head>
+<body>
+    <h2>Sync and Async</h2>
+    <button id="btn01" class="button">Start</button>
+    <button id="btn02" class="button">Stop</button>
+
+</body>
+<script>
+    // Sync and Async
+    let button01 = document.querySelector('#btn01');
+    let button02 = document.querySelector('#btn02');
+    let button = document.querySelector('.button');
+
+    let namePrint = function(name) {
+        return(name);
+    }
+
+    let timeOutFun;
+
+
+    button01.addEventListener('click', function() {
+        console.log('Start Button Clicked');
+        timeOutFun =  setTimeout(function() {
+            console.log(namePrint('Sujit'));
+        }, 2000);
+
+    });
+
+    button02.addEventListener('click', function() {
+        console.log('Stop Button Clicked');
+        clearTimeout(timeOutFun);
+    });
+
+
+
+    // setTimeout is an asynchronous function, it will not block the execution of the code.
+    // The code inside setTimeout will be executed after 2 seconds, but the code after setTimeout will be executed immediately.
+
+</script>
+</html>

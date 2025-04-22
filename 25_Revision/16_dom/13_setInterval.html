@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="head">I am Sujit Kumar Singh</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+
+<script>
+    let startButton = document.querySelector('#start')
+    let stopButton = document.querySelector('#stop')
+
+    let datePrintFunction = function(){
+        let date = new Date()
+        let dateAndTime = date.toLocaleString()
+        console.log(dateAndTime)
+    }
+
+    let str = "Current Time"
+
+    let interval;
+
+    startButton.addEventListener('click', function() {
+        console.log('Start Button Clicked')
+        interval = setInterval(datePrintFunction, 2000, str)
+    })
+
+    stopButton.addEventListener('click', function() {
+        console.log('Stop Button Clicked')
+        clearInterval(interval)
+    })
+
+
+</script>
+
+</html>
