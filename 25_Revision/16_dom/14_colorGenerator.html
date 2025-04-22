@@ -30,7 +30,9 @@
 
     let interval;
 
-    
+    // if (!interval){
+
+    // }
 
     startButton.addEventListener('click', function() {
         console.log('Start Button Clicked')
@@ -42,6 +44,7 @@
     stopButton.addEventListener('click', function() {
         console.log('Stop Button Clicked')
         clearInterval(interval)
+        interval = null
     })
 
 

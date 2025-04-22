@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td>Key</td>
+                <td>Code</td>
+                <td>KeyCode</td>
+            </tr>
+            <tr>
+                <td id="keypress">keypress</td>
+                <td id="code">code</td>
+                <td id="keyCode">keyCode</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+<script>
+
+    let key = document.querySelector('#keypress')
+    let code = document.querySelector('#code')
+    let keyCode = document.querySelector('#keyCode')    
+
+    // window.addEventListener('keypress', function(event) {
+    //     console.log(event)
+    //     key.innerHTML = event.key
+    //     code.innerHTML = event.code
+    //     keyCode.innerHTML = event.keyCode
+    // })
+
+    window.addEventListener('keydown', (e) => {
+        console.log(e)
+        key.innerHTML = e.key
+        code.innerHTML = e.code
+        keyCode.innerHTML = e.keyCode
+    })
+    
+</script>
+</html>
