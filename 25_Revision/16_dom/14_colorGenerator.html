@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div>
+        <h1 id="head">I am Sujit Kumar Singh</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+
+<script>
+
+    const randomColor = function() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    let startButton = document.querySelector('#start')
+    let stopButton = document.querySelector('#stop')
+    let body = document.querySelector('#body')
+
+    let interval;
+
+    
+
+    startButton.addEventListener('click', function() {
+        console.log('Start Button Clicked')
+        interval = setInterval(function() {
+            body.style.backgroundColor = randomColor()
+            body.style.tranisition = '2s'
+        }, 2000)
+    })
+
+    stopButton.addEventListener('click', function() {
+        console.log('Stop Button Clicked')
+        clearInterval(interval)
+    })
+
+
+</script>
+
+</html>
