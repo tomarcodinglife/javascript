@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+<script>
+
+    let div = document.querySelector('div');
+    let whishesLine = document.createElement('h1');
+    whishesLine.innerText
+    div.appendChild(whishesLine);
+    
+
+    // function myFunction(name, time) {
+    //     console.log(`Good ${time}, ${name}!`);
+    //     setInterval(() => {
+    //        whishesLine.innerText = (`Good ${time}, ${name}!`);
+    //     }, 1000);
+    // }
+
+
+    function myFunction(name, time) {
+        console.log(`Good ${time}, ${name}!`);
+        whishesLine.innerText = (`Good ${time}, ${name}!`);
+    }
+
+    intervalID = setInterval(myFunction, 1000, "Sujit", "Morning");
+
+    // setInterval(myFunction("sujit", "Morning"), 1000);
+
+    setInterval(() => {
+        clearInterval(intervalID);
+        whishesLine.innerText = (`Interval Cleared`);
+    }, 2000);
+
+    // myFunction("Sujit", 'Morning');
+    // whishesLine.innerText = s
+    
+</script>
+</html>
