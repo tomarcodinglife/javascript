@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+
+<script>
+
+    let container = document.querySelector('#container');
+
+    let APIURL = "https://api.github.com/users/tomarcodinglife"
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', APIURL, true);
+
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState, xhr.status);
+
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            let data = JSON.parse(xhr.responseText);
+            console.log(data);
+
+            let name = document.createElement('h1');
+            name.innerText = data.name;
+            container.appendChild(name);
+            console.log(name);
+
+            let bio = document.createElement('p');
+            bio.innerText = data.bio;
+            container.appendChild(bio);
+            console.log(bio);
+
+            let img = document.createElement('img');
+            img.src = data.avatar_url;
+            img.width = 200;
+            container.appendChild(img);
+            console.log(img);
+        }
+    }
+    xhr.send();
+
+</script> 
+</html>
+
