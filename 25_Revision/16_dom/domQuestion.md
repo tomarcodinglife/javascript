@@ -115,7 +115,7 @@ Event sabse pehle outermost element (document ya window) se start hota hai aur t
 Agar aap event listener me true pass karte ho, toh ye capturing phase me handle hota hai.
 
 ```js
-        element.addEventListener("click", handler, true); // Capturing
+    element.addEventListener("click", handler, true); // Capturing
 ```
 ## Target Phase (Direct Target)
 Jab event target element tak pahuchta hai, tab uss element ka event listener trigger hota hai.
@@ -126,7 +126,7 @@ Event fir target element se parent elements tak bubble karta hai.
 Ye default behavior hota hai, jab tum event listener me false ya koi bhi third parameter nahi dete ho.
     
 ```js
-        element.addEventListener("click", handler, false); // Bubbling (default)
+    element.addEventListener("click", handler, false); // Bubbling (default)
 ```
 
 # Event Delegation
@@ -165,11 +165,11 @@ Example     - Parent element pe listener laga kar child click handle karna.
 Ye function ek baar code ko run karta hai specified delay ke baad.
 
 ```js
-        setTimeout(function, delay_in_ms); // syntax
+    setTimeout(function, delay_in_ms); // syntax
 
-        setTimeout(() => {
-        console.log("Hello after 2 seconds");
-        }, 2000); // 2000 ms = 2 seconds // output "Hello after 2 seconds" (one time print)
+    setTimeout(() => {
+    console.log("Hello after 2 seconds");
+    }, 2000); // 2000 ms = 2 seconds // output "Hello after 2 seconds" (one time print)
 ```
 ## setInterval
 Ye function bar-bar code ko run karta hai, har baar specified interval ke baad.
