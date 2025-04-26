@@ -149,6 +149,7 @@ Description - Event ka flow hota hai capturing → target → bubbling phase me.
 Use Case    - Multiple elements ke liye listeners lagana.
 Example     -addEventListener("click", handler, true) (Capturing)
 
+
 ## Event Delegation
 Description - Parent element pe listener laga kar child elements ko handle karte hain.
 Use Case    - Dynamic elements ya large sets of elements ke liye efficient event handling.
