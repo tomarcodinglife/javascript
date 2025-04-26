@@ -103,3 +103,51 @@
     Capturing Phase	    Parent → Target	            addEventListener(..., true)
     Target Phase	    Target Element	            Always runs
     Bubbling Phase	    Target → Parent	            addEventListener(..., false) -->
+
+
+# Event Propagation
+    Event Propagation ek process hai jisme ek event (jaise click, keydown, mouseover, etc.) ek element pe trigger hota hai aur wo parent se child tak ya child se parent tak propagate (travel) karta hai. Is process me 3 main phases hote hain:
+
+    Phases of Event Propagation:
+
+## Capturing Phase (Top → Down)
+
+    Event sabse pehle outermost element (document ya window) se start hota hai aur target element tak pahuchta hai.
+
+    Agar aap event listener me true pass karte ho, toh ye capturing phase me handle hota hai.
+
+```js
+        element.addEventListener("click", handler, true); // Capturing
+```
+## Target Phase (Direct Target)
+    Jab event target element tak pahuchta hai, tab uss element ka event listener trigger hota hai.
+
+## Bubbling Phase (Bottom → Up)
+
+    Event fir target element se parent elements tak bubble karta hai.
+
+    Ye default behavior hota hai, jab tum event listener me false ya koi bhi third parameter nahi dete ho.
+    
+```js
+        element.addEventListener("click", handler, false); // Bubbling (default)
+```
+
+# Event Delegation
+    Event Delegation ek technique hai jisme hum parent element pe ek hi event listener lagate hain, aur uske through multiple child elements ke events ko handle karte hain.
+
+## How Event Delegation Works:
+    Aap parent element pe ek event listener lagate ho.
+    Jab child element pe event trigger hota hai (jaise click), to event parent element tak propagate hota hai.
+    Aap event.target ka use karke identify kar lete ho ki kaunsa specific child element trigger hua.
+## Benefits of Event Delegation:
+    Better Performance: Multiple event listeners lagane ki jagah ek hi listener laga kar, hum child elements ko handle kar sakte hain.
+
+    Dynamic Elements: Agar new elements dynamically add hote hain, toh unhe automatically handle kiya ja sakta hai bina naye listeners add kiye.
+
+#   Event Propagation vs Event Delegation:
+    ---
+    | Feature	        | Event Propagation	    |Event Delegation |
+    |-------------------:|-----------------------:|------------------:|
+    Description	Event ka flow hota hai capturing → target → bubbling phase me.	Parent element pe listener laga kar child elements ko handle karte hain.
+Use Case	Multiple elements ke liye listeners lagana.	Dynamic elements ya large sets of elements ke liye efficient event handling.
+Example	addEventListener("click", handler, true) (Capturing)	Parent element pe listener laga kar child click handle karna.
