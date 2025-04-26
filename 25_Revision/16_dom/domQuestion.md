@@ -99,10 +99,10 @@
 
 ## Summary Table 
 
-<!-- Phase	            Direction	                Listener Mode
+Phase	            Direction	                Listener Mode
 Capturing Phase	    Parent → Target	            addEventListener(..., true)
 Target Phase	    Target Element	            Always runs
-Bubbling Phase	    Target → Parent	            addEventListener(..., false) -->
+Bubbling Phase	    Target → Parent	            addEventListener(..., false) 
 
 
 # Event Propagation
