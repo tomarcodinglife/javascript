@@ -41,7 +41,7 @@ promiseThree.then(function(username){
 
 let promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true;
+        let error = false;
         if(!error){
             resolve({username : "sujitTomar", password : "abc@123"})
         }else{
