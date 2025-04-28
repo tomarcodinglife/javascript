@@ -14,6 +14,7 @@ promiseOne.then(function(){
     console.log("Promise Consumed");
 })
 
+// ---------------------------------------------------------------------
 
 new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -24,7 +25,36 @@ new Promise(function(resolve, reject){
     console.log("Async 2 resolved")
 })
 
+// ---------------------------------------------------------------------
 
-new Promise(function(resolve, reject){
-    
+let promiseThree = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            resolve({username  : "Sujit Tomar", mail : "sujit@google.com"})
+        }, 1000)
+})
+
+promiseThree.then(function(username){
+    console.log(username)
+})
+
+// ---------------------------------------------------------------------
+
+let promiseFour = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true;
+        if(!error){
+            resolve({username : "sujitTomar", password : "abc@123"})
+        }else{
+            reject("error")
+        }
+    }, 3000)
+})
+
+promiseFour.then((userDetails)=>{
+    console.log(userDetails.username);
+    return userDetails.username
+}).then((user)=>{
+    console.log(user)
+}).catch((err)=>{
+    console.log(err)
 })
