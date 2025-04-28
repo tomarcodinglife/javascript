@@ -24,18 +24,18 @@
 
 // call back hell
 
-// addition(5, 3, function(addresult){
-//     multiplication(addresult, 2, 
-//         function (mulresult){
-//     subtraction(mulresult, 4, 
-//         function (subresult){
-//     division (subresult, 2, 
-//         function (divresult){
-//    console.log("Final - ",divresult
-//         )}
-//     )}
-//     )}
-//     )})
+addition(5, 3, function(addresult){
+    multiplication(addresult, 2, 
+        function (mulresult){
+    subtraction(mulresult, 4, 
+        function (subresult){
+    division (subresult, 2, 
+        function (divresult){
+   console.log("Final - ",divresult
+        )}
+    )}
+    )}
+    )})
 
 // promise
 
