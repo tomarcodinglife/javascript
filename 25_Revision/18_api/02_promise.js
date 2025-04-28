@@ -54,7 +54,10 @@ promiseFour.then((userDetails)=>{
     console.log(userDetails.username);
     return userDetails.username
 }).then((user)=>{
-    console.log(user)
+    console.log(user) // true case exit
 }).catch((err)=>{
-    console.log(err)
+    console.log(err) // false case exit
+}).finally(()=>{
+    console.log("Promise Resolve or Reject Compleated"); // 
 })
+
