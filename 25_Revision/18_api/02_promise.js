@@ -83,8 +83,6 @@ const promiseFive = new Promise(function(resolve, reject){
 
 // promiseFiveConsume()
 
-
-
 async function promiseFiveConsume(){
     try {
         const response = await promiseFive
@@ -98,12 +96,11 @@ promiseFiveConsume()
 
 // ---------------------------------------------------------------------
 
-async function getAllUser(data) {
+async function getAllUser() {
     try {
-        const response = fetch('https://jsonplaceholder.typicode.com/user')
-        const data = (await response).json
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const data = response.json()
         console.log(data);
-    
     } catch (e) {
         console.log("error :", e);
     }
