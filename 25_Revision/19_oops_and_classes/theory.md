@@ -1,5 +1,4 @@
 # OOP
-
 Object Literal
 -Constructor Function
 -Prototype
