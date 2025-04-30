@@ -36,7 +36,12 @@ let phpBook = new newBook ("myPHPWorld", "Tomar Publication", "Sujit Tomar", 25,
 // console.log(phpBook);
 
 JSBook.printBook()
+
 JSBook.priceIncrease()
+
+phpBook.printBook()
+
+phpBook.priceIncrease()
 
 
 
