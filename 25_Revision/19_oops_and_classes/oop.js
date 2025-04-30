@@ -29,6 +29,7 @@ let userSecond = new myUser("Tomar", "abc@gmail.com", false)
 console.log(userFirst);
 console.log(userSecond);
 
+console.log(userFirst instanceof myUser)
 
 
 
