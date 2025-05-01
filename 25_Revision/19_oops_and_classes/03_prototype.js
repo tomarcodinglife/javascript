@@ -36,4 +36,6 @@ Array.prototype.tomar = ()=>{
 
 // now i can use the array self made method
 vegetable.tomar() //  Tomar is a title of sujit
-vegetablePrice.tomar() // Error here because it is object but this method onle give to array
+/* vegetablePrice.tomar() // Error here because it is object but this method onle give to array */
+
+
