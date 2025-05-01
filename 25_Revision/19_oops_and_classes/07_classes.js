@@ -35,11 +35,15 @@ newUser.prototype.securePassword =function(){
     return(`${this.password}`)
 }
 newUser.prototype.userNameChange = function(){
-    if(username === username.toLowerCase){
+    if(this.username === this.username.toLowerCase()){
         return(`${this.username.toUpperCase()}`)
-    }else if(username === username.toUpperCase){
+    }else if(this.username === this.username.toUpperCase()){
         return(`${this.username.toLowerCase()}`)
+    }else{
+        return(`username is mixed to upper and lower case`)
     }
 }
 
-console.log(newUser.userNameChange())
+let userx = new newUser("SujitTomar", "abc@gmail.com", "123@pass")
+console.log(userx)
+console.log(userx.userNameChange());
