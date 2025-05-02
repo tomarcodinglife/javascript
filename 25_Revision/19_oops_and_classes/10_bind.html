@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button id="call">Call Button</button>
+    <button id="bind">Bind Button</button>
+</body>
+<script>
+    console.log("I am JS");
+    
+    class user {
+        constructor(myName, location){
+            this.myName = myName
+            this.location = location
+
+            const callBtn = document.querySelector('#call')
+            const bindBtn = document.querySelector('#bind')
+
+            // if(btn){
+            //     btn.addEventListener("click", ()=>{
+            //     this.buttonClickWork.call(this)
+            //     })
+            // }else{
+            //     console.log('btn not found');
+                
+            // }
+
+            callBtn.addEventListener("click", () => {
+                this.buttonClickWorkforCall.call(this)
+            })
+
+            bindBtn.addEventListener("click", this.buttonClickWorkforbind.bind(this))
+        }
+
+        buttonClickWorkforCall(){
+            console.log("i am call button")
+            console.log(`name: ${this.myName} and location is ${this.location}`)
+        }
+
+        buttonClickWorkforbind(){
+            console.log("i am bind button")
+            console.log(`name: ${this.myName} and location is ${this.location}`)
+        }
+
+    }
+    new user("Sujit", "Patna");
+    new user("Amit", "Delhi");
+</script>
+</html>
