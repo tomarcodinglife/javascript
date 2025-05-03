@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closer</title>
+</head>
+<body>
+    <button id="btn01">Button 1</button>
+    <button id="btn02">Button 2</button>
+    <button id="btn03">Button 3</button>
+    <button id="btn04">Button 4</button>
+    <button id="btn05">Button 5</button>
+    <button id="btn06">Button 6</button>
+    <button id="btn07">Button 7</button>
+    <button id="btn08">Button 8</button>
+    <button id="btn09">Button 9</button>
+    <button id="btn10">Button 10</button>
+    <button id="btn11">Button 11</button>
+</body>
+<script>
+    let btn01 = document.querySelector('#btn01')
+    let btn02 = document.querySelector('#btn02')
+    let btn03 = document.querySelector('#btn03')
+    let btn04 = document.querySelector('#btn04')
+    let btn05 = document.querySelector('#btn05')
+    let btn06 = document.querySelector('#btn06')
+    let btn07 = document.querySelector('#btn07')
+    let btn08 = document.querySelector('#btn08')
+    let btn09 = document.querySelector('#btn09')
+    let btn10 = document.querySelector('#btn10')
+    let btn11 = document.querySelector('#btn11')
+
+    function colorChangeFunction (color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+    btn01.onclick = colorChangeFunction('black')
+    btn02.onclick = colorChangeFunction('black')
+    btn03.onclick = colorChangeFunction('black')
+    btn04.onclick = colorChangeFunction('black')
+    btn05.onclick = colorChangeFunction('black')
+    btn06.onclick = colorChangeFunction('black')
+    btn07.onclick = colorChangeFunction('black')
+    btn08.onclick = colorChangeFunction('black')
+    btn09.onclick = colorChangeFunction('black')
+    btn10.onclick = colorChangeFunction('black')
+    btn11.onclick = colorChangeFunction('black')
+</script>
+</html>
