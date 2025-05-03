@@ -31,15 +31,17 @@
     let btn10 = document.querySelector('#btn10')
     let btn11 = document.querySelector('#btn11')
 
+    // it is closure
     function colorChangeFunction (color){
         return function(){
             document.body.style.backgroundColor = `${color}`
         }
     }
+    
     btn01.onclick = colorChangeFunction('black')
-    btn02.onclick = colorChangeFunction('black')
-    btn03.onclick = colorChangeFunction('black')
-    btn04.onclick = colorChangeFunction('black')
+    btn02.onclick = colorChangeFunction('orange')
+    btn03.onclick = colorChangeFunction('white')
+    btn04.onclick = colorChangeFunction('green')
     btn05.onclick = colorChangeFunction('black')
     btn06.onclick = colorChangeFunction('black')
     btn07.onclick = colorChangeFunction('black')
