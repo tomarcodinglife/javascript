@@ -44,3 +44,24 @@ input, select, button {
     margin-top: 50px; 
     font-weight: bold; 
 }
+
+#refdate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media print {
+    #actions {
+      display: none;
+    }
+  }
+  
+
+/* #refNo{
+    align-items: left;
+}
+
+#date{
+    align-items: right;
+} */
