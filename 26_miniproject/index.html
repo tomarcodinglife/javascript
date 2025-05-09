@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUDDHA INSTITUTE OF TECHNOLOGY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2 id="head">BUDDHA INSTITUTE OF TECHNOLOGY</h2>
+    <p id="subhead">Bonafied Generator</p>
+    <form id="certForm">
+      <input type="text" id="studentName" placeholder="Student Name" required>
+      <input type="text" id="fatherName" placeholder="Father's Name" required>
+      <input type="text" id="session" placeholder="Session (e.g. 2020-23)" required>
+      <input type="text" id="branch" placeholder="Branch (e.g. Electrical Engineering)" required>
+      <input type="text" id="rollNo" placeholder="Roll Number" required>
+      <input type="text" id="semester" placeholder="Promoted Semester (e.g. 6th)" required>
+      <input type="text" id="fee" placeholder="Fee Payable (e.g. 57100/-)" required>
+      <textarea id="backlog" placeholder="Reason for delay (default: backlog in 4th sem)"></textarea>
+      <button type="submit">Generate Certificate</button>
+    </form>
+
+    <div id="certificate">
+      <p><strong>Ref. No.:-</strong> <span id="refNo"></span> <strong id="curdate"></strong> <span id="certDate"></span></p>
+      <h2 class="text-center">TO WHOM IT MAY CONCERN</h2>
+
+      <p>Certified that <strong><span id="certStudent"></span></strong> S/o <strong><span id="certFather"></span></strong> had been admitted during the session <strong><span id="certSession"></span></strong> in the branch of <strong><span id="certBranch"></span></strong> bearing Roll No – <strong><span id="certRoll"></span></strong>. He is a bonafide student of this institution. He is promoted to <strong><span id="certSemester"></span></strong> Semester. The 3rd Year dues payable fee will be <strong><span id="certFee"></span></strong>.</p>
+
+      <p>This Institute has been recognized by A.I.C.T.E through their F.No. Northern/1-43657927785/2024/EOA, dated: 08-May-2024 & affiliated to SBTE, Patna, Bihar affiliation no. KK(SBTE)02/2022(Part-4)-2957/Patna, Dated-30.07.2024 and subsequently recognized by Department of Science & Technology, Govt. of Bihar, Patna.</p>
+
+      <p>Session has been running late due to <span id="certBacklog">backlog in 4th sem</span>.</p>
+
+      <p><strong>Account Holder Name</strong> – Buddha Polytechnic Institute<br>
+        <strong>Bank Name</strong> – State Bank of India<br>
+        <strong>Address</strong> – Gandhi Maidan, Gaya<br>
+        <strong>Account No.</strong> – 36922955550<br> 
+        <strong>IFSC</strong> – SBIN0006553</p>
+
+      <div class="signature">Principal</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
