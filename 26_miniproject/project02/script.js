@@ -40,22 +40,23 @@ document.getElementById('generate-btn').addEventListener('click', () => {
 });
 
 document.getElementById('download-btn').addEventListener('click', () => {
-  const cert = document.getElementById('certificate');
+    const printCertificate = document.getElementById('certificate');
 
-  // Ensure certificate is visible
-  cert.style.display = 'block';
+    // Ensure certificate is visible
+    printCertificate.style.display = 'block';
+    console.log("printCertificate", printCertificate);
 
-  // Small delay to allow DOM to paint before capturing
-  setTimeout(() => {
-      const opt = {
-          margin:     0.5,
-          filename:   'bonafide_certificate.pdf',
-          image:      { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2 },
-          jsPDF:      { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
+    // Small delay to allow DOM to paint before capturing
+    setTimeout(() => {
+        const opt = {
+            margin:     0.5,
+            filename:   'bonafide_certificate.pdf',
+            image:      { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF:      { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
 
-      html2pdf().set(opt).from(cert).save();
-      console.error("errpr", err);
-  }, 500);
+        html2pdf().set(opt).from(printCertificate).save();
+    }, 500);
+    console.log("printCertificate", printCertificate);
 });
