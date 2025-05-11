@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Bonafide Certificate Generator</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bonafide Certificate Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
-    <div class="header">
-        <h1>BUDDHA INSTITUTE OF TECHNOLOGY</h1>
-        <h3>Industrial Area, Gaya</h3>
-        <h2>Bonafide Generator</h2>
+  <div class="header">
+    <h1>BUDDHA INSTITUTE OF TECHNOLOGY</h1>
+    <h3>Industrial Area, Gaya</h3>
+    <h2>Bonafide Generator</h2>
+  </div>
+
+  <div class="input-form">
+    <div class="form-group">
+      <label for="student-name">Name:</label>
+      <input type="text" id="student-name" placeholder="Rohit Kumar" />
     </div>
 
-    <div class="input-form">
-        <div class="form-group">
-            <label for="student-name">Name:</label>
-            <input type="text" id="student-name" placeholder="Rohit Kumar" />
-        </div>
-
-        <div class="form-group">
-            <label for="fathers-name">Father's Name:</label>
-            <input type="text" id="fathers-name" placeholder="Ramesh Kumar" />
-        </div>
-
-        <div class="form-group">
-            <label for="session">Session:</label>
-            <input type="text" id="session" placeholder="2020-23" />
-        </div>
-
-        <div class="form-group">
-            <label for="course">Course:</label>
-            <select id="course">
-                <option value="B.Tech Engineering">B.Tech Engineering</option>
-                <option value="Polytechnic Engineering">Polytechnic Engineering</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="branch-select">Branch:</label>
-            <select id="branch-select">
-                <option value="Civil Engineering">Civil Engineering</option>
-                <option value="Electrical Engineering">Electrical Engineering</option>
-                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
-                <option value="Mechanical Engineering">Mechanical Engineering</option>
-                <option value="Electronics Engineering">Electronics Engineering</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="roll-no">Roll No:</label>
-            <input type="text" id="roll-no" placeholder="123456" />
-        </div>
-
-        <div class="form-group">
-            <label for="semester">Promoted Semester:</label>
-            <input type="text" id="semester" placeholder="6th" />
-        </div>
-
-        <div class="form-group">
-            <label for="fee">Fee Payable:</label>
-            <input type="text" id="fee" placeholder="87100/-" />
-        </div>
-
-        <div class="form-group">
-            <label for="is-late">Is session running late?</label>
-            <select id="is-late">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="backlog">Reason for delay (if any):</label>
-            <input type="text" id="backlog" placeholder="Backlog in 4th sem" />
-        </div>
-
-        <div class="button-group">
-            <button id="generate-btn">Generate Certificate</button>
-            </div>
-
+    <div class="form-group">
+      <label for="fathers-name">Father's Name:</label>
+      <input type="text" id="fathers-name" placeholder="Ramesh Kumar" />
     </div>
 
-    <div id="certificate" class="hidden">
-
-        <div id="refdate">
-            <p><strong>Ref. No.:-</strong> <span id="refNo"></span></p>
-            <p><strong>Date:</strong> <span id="certDate"></span></p>
-        </div>
-
-        <h2 class="text-center">TO WHOM IT MAY CONCERN</h2>
-
-        <p>
-            Certified that <strong><span id="certStudent"></span></strong> S/o
-            <strong><span id="certFather"></span></strong> had been admitted during
-            the session <strong><span id="certSession"></span></strong> in the branch of
-            <strong><span id="certBranch"></span></strong> bearing Roll No –
-            <strong><span id="certRoll"></span></strong>. He is a bonafide student of
-            this institution. He is promoted to <strong><span id="certSemester"></span></strong>
-            Semester. The 3rd Year dues payable fee will be <strong><span id="certFee"></span></strong>.
-        </p>
-
-        <p>
-            This Institute has been recognized by A.I.C.T.E through their F.No.
-            Northern/1-43657927785/2024/EOA, dated: 08-May-2024 & affiliated to
-            SBTE, Patna, Bihar affiliation no. KK(SBTE)02/2022(Part-4)-2957/Patna,
-            Dated-30.07.2024 and subsequently recognized by Department of Science &
-            Technology, Govt. of Bihar, Patna.
-        </p>
-
-        <p id="backlog-line" style="display: none;">
-            Session has been running late due to <span id="certBacklog">backlog in 4th sem</span>.
-        </p>
-
-        <p>
-            <strong>Account Holder Name</strong> – Buddha Polytechnic Institute<br />
-            <strong>Bank Name</strong> – State Bank of India<br />
-            <strong>Address</strong> – Gandhi Maidan, Gaya<br />
-            <strong>Account No.</strong> – 36922955550<br />
-            <strong>IFSC</strong> – SBIN0006553
-        </p>
-
-        <div class="signature">Principal</div>
-
-        <div class="button-group">
-            <button id="download-btn" class="hidden">Download PDF</button>
-        </div>
-
+    <div class="form-group">
+      <label for="session">Session:</label>
+      <input type="text" id="session" placeholder="2020-23" />
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="script.js"></script>
+
+    <div class="form-group">
+      <label for="course">Course:</label>
+      <select id="course">
+        <option value="B.Tech Engineering">B.Tech Engineering</option>
+        <option value="Polytechnic Engineering">Polytechnic Engineering</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="branch-select">Branch:</label>
+      <select id="branch-select">
+        <option value="Civil Engineering">Civil Engineering</option>
+        <option value="Electrical Engineering">Electrical Engineering</option>
+        <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Electronics Engineering">Electronics Engineering</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="roll-no">Roll No:</label>
+      <input type="text" id="roll-no" placeholder="123456" />
+    </div>
+
+    <div class="form-group">
+      <label for="semester">Promoted Semester:</label>
+      <input type="text" id="semester" placeholder="6th" />
+    </div>
+
+    <div class="form-group">
+      <label for="fee">Fee Payable:</label>
+      <input type="text" id="fee" placeholder="87100/-" />
+    </div>
+
+    <div class="form-group">
+      <label for="is-late">Is session running late?</label>
+      <select id="is-late">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="backlog">Reason for delay (if any):</label>
+      <input type="text" id="backlog" placeholder="Backlog in 4th sem" />
+    </div>
+
+    <div class="button-group">
+      <button id="generate-btn">Generate Certificate</button>
+      <!-- <button id="download-btn" class="hidden">Download PDF</button> -->
+    </div>
+    
+  </div>
+
+  <div id="certificate" class="hidden">
+    
+    <div id="refdate">
+      <p><strong>Ref. No.:-</strong> <span id="refNo"></span></p>
+      <p><strong>Date:</strong> <span id="certDate"></span></p>
+    </div>
+
+    <h2 class="text-center">TO WHOM IT MAY CONCERN</h2>
+
+    <p>
+      Certified that <strong><span id="certStudent"></span></strong> S/o
+      <strong><span id="certFather"></span></strong> had been admitted during
+      the session <strong><span id="certSession"></span></strong> in the branch of
+      <strong><span id="certBranch"></span></strong> bearing Roll No –
+      <strong><span id="certRoll"></span></strong>. He is a bonafide student of
+      this institution. He is promoted to <strong><span id="certSemester"></span></strong>
+      Semester. The 3rd Year dues payable fee will be <strong><span id="certFee"></span></strong>.
+    </p>
+
+    <p>
+      This Institute has been recognized by A.I.C.T.E through their F.No.
+      Northern/1-43657927785/2024/EOA, dated: 08-May-2024 & affiliated to
+      SBTE, Patna, Bihar affiliation no. KK(SBTE)02/2022(Part-4)-2957/Patna,
+      Dated-30.07.2024 and subsequently recognized by Department of Science &
+      Technology, Govt. of Bihar, Patna.
+    </p>
+
+    <p id="backlog-line" style="display: none;">
+      Session has been running late due to <span id="certBacklog">backlog in 4th sem</span>.
+    </p>
+
+    <p>
+      <strong>Account Holder Name</strong> – Buddha Polytechnic Institute<br />
+      <strong>Bank Name</strong> – State Bank of India<br />
+      <strong>Address</strong> – Gandhi Maidan, Gaya<br />
+      <strong>Account No.</strong> – 36922955550<br />
+      <strong>IFSC</strong> – SBIN0006553
+    </p>
+
+    <div class="signature">Principal</div>
+
+    <div class="button-group">
+      <button id="download-btn" class="hidden">Download PDF</button>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
