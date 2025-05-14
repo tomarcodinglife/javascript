@@ -67,3 +67,5 @@ document.getElementById('certForm').addEventListener('submit', function(e) {
      
        html2pdf().set(opt).from(element).save();
      }
+
+    
