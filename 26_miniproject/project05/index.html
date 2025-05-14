@@ -4,40 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Website</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(90deg, #a4d9ff, #f0b3fa);
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 1rem;
+        }
+
+        .quiz {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        label {
+            font-size: 1.1rem;
+            margin-left: 0.5rem;
+        }
+
+        .btns {
+            text-align: right;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            background-color: #29b9ad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #239c91;
+        }
+
+        @media (max-width: 600px) {
+            .quiz {
+                padding: 1rem;
+            }
+            .question {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="quiz-section">
-        <div class="quiz">
-            <h2 class="question" id="question">Quiz Question</h2>
-                <hr>
-                    <ul>
-                        <li>
-                            <input type="radio" name="answer" class="answer" id="a">
-                            <label for="a" id="option_1">quiz Option</label>
-                        </li> 
-
-                        <li>
-                            <input type="radio" name="answer" class="answer" id="a">
-                            <label for="a" id="option_1">quiz Option</label>
-                        </li> 
-
-                        <li>
-                            <input type="radio" name="answer" class="answer" id="a">
-                            <label for="a" id="option_1">quiz Option</label>
-                        </li> 
-
-                        <li>
-                            <input type="radio" name="answer" class="answer" id="a">
-                            <label for="a" id="option_1">quiz Option</label>
-                        </li> 
-                    </ul>
-                <hr>
-            <div class="btns">
-                <button class="btn" id="submit">Submit</button>
-            </div>
+    <div class="quiz">
+        <h2 class="question" id="question">Quiz Question</h2>
+        <hr>
+        <ul>
+            <li>
+                <input type="radio" name="answer" class="answer" id="a">
+                <label for="a" id="option_1">Option A</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" class="answer" id="b">
+                <label for="b" id="option_2">Option B</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" class="answer" id="c">
+                <label for="c" id="option_3">Option C</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" class="answer" id="d">
+                <label for="d" id="option_4">Option D</label>
+            </li>
+        </ul>
+        <hr>
+        <div class="btns">
+            <button class="btn" id="submit">Submit</button>
         </div>
     </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "What is the capital of France?",
+                options: {
+                    a: "Berlin",
+                    b: "Madrid",
+                    c: "Paris",
+                    d: "Rome"
+                },
+                answer: 2
+            },
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: {
+                    a: "Earth",
+                    b: "Mars",
+                    c: "Jupiter",
+                    d: "Saturn"
+                },
+                answer: 1
+            },
+            {
+                question: "What is the largest ocean on Earth?",
+                options: {
+                    a: "Atlantic Ocean",
+                    b: "Indian Ocean",
+                    c: "Arctic Ocean",
+                    d: "Pacific Ocean"
+                },
+                answer: 3
+            },
+            {
+                question: "Who wrote 'Romeo and Juliet'?",
+                options: {
+                    a: "Charles Dickens",
+                    b: "William Shakespeare",
+                    c: "Mark Twain",
+                    d: "Jane Austen"
+                },
+                answer: 1
+            },
+            {
+                question: "What is the chemical symbol for gold?",
+                options: {
+                    a: "Au",
+                    b: "Ag",
+                    c: "Pb",
+                    d: "Fe"
+                },
+                answer: 0
+            },
+            {
+                question: "Which gas do plants absorb from the atmosphere?",
+                options: {
+                    a: "Oxygen",
+                    b: "Carbon Dioxide",
+                    c: "Nitrogen",
+                    d: "Hydrogen"
+                },
+                answer: 1
+            }
+        ];
+
+        const questionElement = document.getElementById("question");
+        const optionstag = {
+            a: document.getElementById("option_1"),
+            b: document.getElementById("option_2"),
+            c: document.getElementById("option_3"),
+            d: document.getElementById("option_4")
+        };
+        const answertag = document.querySelectorAll(".answer");
+        const submitButton = document.getElementById("submit");
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const loadQuiz = () => {
+            deselectAnswers();
+            const currentQuizData = quizData[currentQuestion];
+            questionElement.innerText = currentQuizData.question;
+
+            let i = 0;
+            for (const key in optionstag) {
+                optionstag[key].innerText = currentQuizData.options[key];
+                answertag[i].setAttribute('data-index', i);
+                i++;
+            }
+        };
+
+        const deselectAnswers = () => {
+            answertag.forEach(input => input.checked = false);
+        };
+
+        const getSelected = () => {
+            let selectedIndex = null;
+            answertag.forEach((input) => {
+                if (input.checked) {
+                    selectedIndex = parseInt(input.getAttribute('data-index'));
+                }
+            });
+            return selectedIndex;
+        };
+
+        submitButton.addEventListener("click", () => {
+            const selected = getSelected();
+            if (selected !== null) {
+                if (selected === quizData[currentQuestion].answer) {
+                    score++;
+                }
+                currentQuestion++;
+
+                if (currentQuestion < quizData.length) {
+                    loadQuiz();
+                } else {
+                    document.querySelector(".quiz").innerHTML = `
+                        <h2>You scored ${score} out of ${quizData.length}</h2>
+                        <button class="btn" onclick="location.reload()">Restart Quiz</button>
+                    `;
+                }
+            }
+        });
+
+        loadQuiz();
+    </script>
 </body>
-<script src="script.js"></script>
 </html>

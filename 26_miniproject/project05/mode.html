@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Quiz App</title>
+  <style>
+    :root {
+      --bg-light: #f4f4f4;
+      --bg-dark: #1e1e2f;
+      --text-light: #333;
+      --text-dark: #f4f4f4;
+      --primary: #29b9ad;
+      --card: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .quiz-box {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    body.dark .quiz-box {
+      background-color: #2a2a3d;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      background: #e8e8e8;
+      padding: 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    body.dark li {
+      background-color: #3a3a4d;
+    }
+
+    li:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .progress {
+      width: 100%;
+      background-color: #ddd;
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 10px;
+      width: 0%;
+      background-color: var(--primary);
+      transition: width 0.4s ease;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-mode {
+      background-color: transparent;
+      color: inherit;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 0.3rem 0.7rem;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-box {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h1>🧠 Smart Quiz</h1>
+      <button class="toggle-mode" onclick="toggleMode()">🌓 Mode</button>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="quiz-box">
+      <h2 id="question">Question Text</h2>
+      <ul id="options">
+        <!-- Options inserted dynamically -->
+      </ul>
+      <button id="submit">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the capital of France?",
+        options: ["Berlin", "Madrid", "Paris", "Rome"],
+        answer: 2
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Jupiter", "Saturn"],
+        answer: 1
+      },
+      {
+        question: "What is the largest ocean on Earth?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        answer: 3
+      },
+      {
+        question: "Who wrote 'Romeo and Juliet'?",
+        options: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
+        answer: 1
+      },
+      {
+        question: "What is the chemical symbol for gold?",
+        options: ["Au", "Ag", "Pb", "Fe"],
+        answer: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const submitBtn = document.getElementById("submit");
+    const progressBar = document.getElementById("progressBar");
+
+    function loadQuiz() {
+      const qData = quizData[currentQuestion];
+      questionEl.innerText = qData.question;
+      optionsEl.innerHTML = "";
+
+      qData.options.forEach((opt, index) => {
+        const li = document.createElement("li");
+        li.innerText = opt;
+        li.onclick = () => selectOption(index);
+        li.setAttribute("data-index", index);
+        optionsEl.appendChild(li);
+      });
+
+      updateProgress();
+    }
+
+    let selectedOption = null;
+
+    function selectOption(index) {
+      selectedOption = index;
+      const allOptions = document.querySelectorAll("#options li");
+      allOptions.forEach(li => li.style.backgroundColor = "");
+      allOptions[index].style.backgroundColor = "#29b9ad";
+      allOptions[index].style.color = "white";
+    }
+
+    function updateProgress() {
+      const progressPercent = ((currentQuestion) / quizData.length) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+    }
+
+    submitBtn.addEventListener("click", () => {
+      if (selectedOption === null) {
+        alert("Please select an answer!");
+        return;
+      }
+
+      if (selectedOption === quizData[currentQuestion].answer) {
+        score++;
+      }
+
+      currentQuestion++;
+      selectedOption = null;
+
+      if (currentQuestion < quizData.length) {
+        loadQuiz();
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      const percent = Math.round((score / quizData.length) * 100);
+      document.querySelector(".quiz-box").innerHTML = `
+        <h2>You scored ${score}/${quizData.length} (${percent}%)</h2>
+        <button onclick="location.reload()">Play Again</button>
+      `;
+
+      localStorage.setItem("lastScore", score);
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    loadQuiz();
+  </script>
+</body>
+</html>
