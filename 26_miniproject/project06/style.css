@@ -50,9 +50,24 @@ body {
     padding: 1rem;
 }
 
+#language {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+}
+
+#land{
+    height: 1rem;
+    width: 2.5rem;
+    background-color: #FEC45D;
+}
+
 #header-bar h1:hover {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     transform: scale(1.05);
 }
+
+
 
