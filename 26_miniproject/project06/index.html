@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faq Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,11 +15,11 @@
         </div>
 
         <div id="language">
-            <h1>Langaguge : </h1>
+            <!-- <h1>Langaguge : </h1> -->
             <select name="lang" id="lang">
-                <option value="eng">English</option>
-                <option value="eng">Hindi</option>
-                <option value="eng">Chinese</option>
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+                <option value="chiinese">Chinese</option>
             </select>
         </div>
     </div>
@@ -28,14 +29,23 @@
             <h1>Frequently Asked Questions</h1>
             <p>Find right answers to your questions here.</p>
         </div>
-        <div id="hero-section-section">
+        <!-- <div id="hero-section-search">
             <input type="text" id="search" placeholder="Search for your question...">
-            <button id="search-btn"><img src="./files/search.png" alt=""></button>
-        </div>
+            <button id="search-btn"><i class="fa fa-search"></i></button>
+        </div> -->
+        <div id="hero-section-search">
+            <div class="search-container">
+              <input type="text" id="search" placeholder="Search your query...">
+              <button id="search-btn"><i class="fa fa-search"></i></button>
+            </div>
+          </div>
     </div>
     <div class="group-container">
         <div class="group">
         </div>
+    </div>
+    <div id="card" class="faq-group">
+
     </div>
 </body>
 <script src="script.js"></script>
