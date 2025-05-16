@@ -71,20 +71,14 @@ body {
     justify-content: right;
 }
 
-#lang{
+select{
     height: 2rem;
     width: 8rem;
-    background : linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
+    background-color : linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
+    /* background-color: transparent; */
     border-radius: .5rem;
     border-color: #000000;
-}
-
-
-#lang:active{
-    height: 2rem;
-    width: 8rem;
-    background : linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
-    border-radius: .5rem;
+    appearance: none;
 }
 
 #header-bar h1:hover {
@@ -189,7 +183,7 @@ body {
 #lang {
     height: 2rem;
     width: 8rem;
-    background: linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
+    background-color: linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
     border-radius: 0.5rem;
     border: none; 
     color: rgb(0, 0, 0); 
@@ -200,6 +194,12 @@ body {
     cursor: pointer;
     position: relative;
 }
+
+#lang option:hover {
+    background-color: #FEC45D;
+}
+
+
 
 #language::after {
     content: '';
