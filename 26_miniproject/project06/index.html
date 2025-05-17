@@ -9,10 +9,12 @@
 </head>
 <body>
     <div id="header-bar">
-        <div id="logo">
-            <h1>FAQ HubB</h1>
-            <p>Developed By Sujit Tomar</p>
-        </div>
+        <button href="index.html" id="logo-btn">
+            <div id="logo">
+                <h1>FAQ HubB</h1>
+                <p>Developed By Sujit Tomar</p>
+            </div>
+        </button>
 
         <div id="language">
             <!-- <h1>Langaguge : </h1> -->
@@ -21,6 +23,10 @@
                 <option value="hindi">Hindi</option>
                 <option value="chiinese">Chinese</option>
             </select> -->
+            <button name="request-btn" id="request-btn" onclick="location.href='request.html'">
+                <i class="fa fa-question-circle"></i>
+                Submit Request
+            </button>
         </div>
     </div>
 
@@ -44,9 +50,12 @@
         <div class="group">
         </div>
     </div>
-    <div id="faq-related" class="faq-group">
-        
+    <div class="topics" id="topics">
+
+    </div>
+    <div id="faq-container" class="faq-group">
+
     </div>
 </body>
-<script src="script.js"></script>
+<script src="scripts.js"></script>
 </html>

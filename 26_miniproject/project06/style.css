@@ -180,10 +180,11 @@ select{
     border: none;
 }
 
-#lang {
+#request-btn {
     height: 2rem;
     width: 8rem;
-    background-color: linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB);
+    /* background-color: linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB); */
+    background-color: #FEC45D;
     border-radius: 0.5rem;
     border: none; 
     color: rgb(0, 0, 0); 
@@ -193,10 +194,7 @@ select{
     -moz-appearance: none;
     cursor: pointer;
     position: relative;
-}
-
-#lang option:hover {
-    background-color: #FEC45D;
+    margin: 1rem;
 }
 
 
@@ -212,6 +210,15 @@ select{
     font-size: 0.7rem;
 }
 
+#logo-btn{
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
 /* -------------------- Responsive Design ---------------------- */
 
 @media (max-width: 1024px) {
@@ -224,7 +231,7 @@ select{
         padding-right: 2rem;
     }
 
-    #lang {
+    #request-btn {
         width: 6rem;
     }
 }
@@ -244,7 +251,7 @@ select{
         font-size: 0.5rem;
     }
 
-    #lang {
+    #request-btn {
         width: 6rem;
         margin-top: 0.5rem;
     }
@@ -276,7 +283,7 @@ select{
         margin-left: -2rem;
     }
 
-    #lang {
+    #request-btn {
         width: 5rem;
         font-size: 0.8rem;
     }
