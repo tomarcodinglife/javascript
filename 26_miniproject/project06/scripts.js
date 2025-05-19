@@ -38,10 +38,14 @@ let select = document.createElement("select");
 select.id = "lang";
 select.style.background = "linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB)";
 select.style.color = "black";
-select.style.padding = "5px";
+// select.style.padding = "5px";
+console.log(langDiv);
+console.log(language);
+
 
 language.forEach(lang => {
   let option = document.createElement("option");
+  console.log(lang);
   option.value = lang;
   option.text = lang;
   option.style.color = "white";
@@ -53,6 +57,10 @@ langDiv.appendChild(select);
 
 // Style FAQ container
 let faqContainer = document.getElementById("faq-container");
+console.log("faqContainer",faqContainer);
+console.log(typeof faqContainer);
+
+
 Object.assign(faqContainer.style, {
   background: "linear-gradient(90deg, #FEC45D, #FC6E7B, #995FBB)",
   color: "black",
